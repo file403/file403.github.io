@@ -69,14 +69,16 @@
       text-transform: uppercase;
     }
 
-    .nav a {
-      color: var(--muted);
-      transition: color 0.2s ease;
-    }
+.nav a {
+  color: var(--accent);
+  padding: 7px 10px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
 
-    .nav a:hover {
-      color: var(--accent);
-    }
+.nav a:hover {
+  background: var(--accent);
+  color: #ffffff;
+}
 
     .hero {
       display: grid;
