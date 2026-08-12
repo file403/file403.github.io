@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>PROJECT 001 — FILE403</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #000000;
+      --text: #f2f2f2;
+      --muted: #8a8a8a;
+      --line: #252525;
+      --accent: #e34219;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: "SUIT", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* HEADER */
+
+    .site-header {
+      height: 72px;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 32px;
+    }
+
+    .brand {
+      font-family: "Roboto Condensed", sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .brand span {
+      color: var(--accent);
+    }
+
+    .nav {
+      display: flex;
+      gap: 28px;
+      font-family: "Roboto Mono", monospace;
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .nav a:hover {
+      color: var(--accent);
+    }
+
+    /* PROJECT INTRO */
+
+    .project-intro {
+      min-height: 72vh;
+      padding: 48px 32px 60px;
+      display: grid;
+      grid-template-columns: 1fr 2.3fr;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .file-meta {
+      font-family: "Roboto Mono", monospace;
+      font-size: 11px;
+      color: var(--accent);
+    }
+
+    .intro-main {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .project-title {
+      font-family: "Roboto Condensed", sans-serif;
+      font-size: clamp(72px, 10vw, 160px);
+      line-height: 0.82;
+      letter-spacing: -0.055em;
+      text-transform: uppercase;
+      max-width: 1100px;
+    }
+
+    .intro-bottom {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 60px;
+      margin-top: 80px;
+    }
+
+    .project-description {
+      max-width: 600px;
+      font-size: 16px;
+      line-height: 1.9;
+      color: #c6c6c6;
+      word-break: keep-all;
+    }
+
+    .project-data {
+      border-top: 1px solid var(--line);
+    }
+
+    .data-row {
+      min-height: 42px;
+      border-bottom: 1px solid var(--line);
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      align-items: center;
+      font-family: "Roboto Mono", monospace;
+      font-size: 10px;
+    }
+
+    .data-row span:first-child {
+      color: var(--muted);
+    }
+
+    /* HERO IMAGE */
+
+    .project-hero {
+      padding: 24px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .placeholder {
+      min-height: 78vh;
+      border: 1px solid #292929;
+      background:
+        linear-gradient(135deg, #131313, #080808 55%, #111111);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .placeholder::before,
+    .placeholder::after {
+      content: "";
+      position: absolute;
+      background: #272727;
+    }
+
+    .placeholder::before {
+      width: 1px;
+      height: 160%;
+      transform: rotate(35deg);
+    }
+
+    .placeholder::after {
+      height: 1px;
+      width: 160%;
+      transform: rotate(-20deg);
+    }
+
+    .placeholder span {
+      position: relative;
+      z-index: 2;
+      padding: 10px 14px;
+      background: #090909;
+      font-family: "Roboto Mono", monospace;
+      font-size: 10px;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+    }
+
+    /* OVERVIEW */
+
+    .overview {
+      padding: 120px 32px;
+      display: grid;
+      grid-template-columns: 1fr 2.3fr;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-label {
+      font-family: "Roboto Mono", monospace;
+      font-size: 11px;
+      color: var(--accent);
+    }
+
+    .overview-content {
+      max-width: 900px;
+    }
+
+    .overview-content h2 {
+      font-family: "Roboto Condensed", sans-serif;
+      font-size: clamp(48px, 6vw, 96px);
+      line-height: 0.9;
+      letter-spacing: -0.045em;
+      margin-bottom: 42px;
+    }
+
+    .overview-content p {
+      max-width: 650px;
+      color: #bdbdbd;
+      font-size: 15px;
+      line-height: 1.9;
+      word-break: keep-all;
+    }
+
+    /* PROCESS */
+
+    .process {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .process-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 620px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .process-row:last-child {
+      border-bottom: none;
+    }
+
+    .process-image {
+      padding: 24px;
+      border-right: 1px solid var(--line);
+    }
+
+    .process-row.reverse .process-image {
+      order: 2;
+      border-right: none;
+      border-left: 1px solid var(--line);
+    }
+
+    .process-row.reverse .process-copy {
+      order: 1;
+    }
+
+    .process-image .placeholder {
+      min-height: 570px;
+    }
+
+    .process-copy {
+      padding: 44px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .process-number {
+      font-family: "Roboto Mono", monospace;
+      color: var(--accent);
+      font-size: 11px;
+    }
+
+    .process-text h3 {
+      font-family: "Roboto Condensed", sans-serif;
+      font-size: clamp(46px, 5vw, 82px);
+      line-height: 0.88;
+      letter-spacing: -0.045em;
+      margin-bottom: 28px;
+    }
+
+    .process-text p {
+      max-width: 520px;
+      color: #bdbdbd;
+      font-size: 14px;
+      line-height: 1.9;
+      word-break: keep-all;
+    }
+
+    /* RESULT */
+
+    .result {
+      padding: 120px 32px;
+      display: grid;
+      grid-template-columns: 1fr 2.3fr;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .result-content h2 {
+      font-family: "Roboto Condensed", sans-serif;
+      font-size: clamp(54px, 7vw, 110px);
+      line-height: 0.85;
+      letter-spacing: -0.05em;
+      margin-bottom: 40px;
+    }
+
+    .result-content p {
+      max-width: 650px;
+      color: #bdbdbd;
+      font-size: 15px;
+      line-height: 1.9;
+    }
+
+    /* NEXT */
+
+    .project-navigation {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 220px;
+    }
+
+    .project-navigation a {
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-right: 1px solid var(--line);
+      transition: background 0.2s ease;
+    }
+
+    .project-navigation a:last-child {
+      border-right: none;
+      text-align: right;
+    }
+
+    .project-navigation a:hover {
+      background: #080808;
+    }
+
+    .nav-label {
+      font-family: "Roboto Mono", monospace;
+      font-size: 10px;
+      color: var(--accent);
+    }
+
+    .nav-title {
+      font-family: "Roboto Condensed", sans-serif;
+      font-size: clamp(30px, 4vw, 58px);
+      line-height: 0.9;
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 30px 32px;
+      display: flex;
+      justify-content: space-between;
+      font-family: "Roboto Mono", monospace;
+      font-size: 10px;
+      color: var(--muted);
+    }
+
+    .footer-logo {
+      font-family: "Roboto Condensed", sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .footer-logo span {
+      color: var(--accent);
+    }
+
+    @media (max-width: 900px) {
+
+      .project-intro,
+      .overview,
+      .result {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+      .intro-bottom {
+        grid-template-columns: 1fr;
+      }
+
+      .process-row,
+      .process-row.reverse {
+        grid-template-columns: 1fr;
+      }
+
+      .process-row.reverse .process-image,
+      .process-row.reverse .process-copy {
+        order: initial;
+      }
+
+      .process-row.reverse .process-image {
+        border-left: none;
+      }
+
+      .process-image {
+        border-right: none;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .project-navigation {
+        grid-template-columns: 1fr;
+      }
+
+      .project-navigation a {
+        min-height: 180px;
+        border-right: none;
+        border-bottom: 1px solid var(--line);
+      }
+    }
+
+    @media (max-width: 560px) {
+
+      .site-header {
+        padding: 0 20px;
+      }
+
+      .project-intro,
+      .overview,
+      .result {
+        padding: 72px 20px;
+      }
+
+      .project-title {
+        font-size: 64px;
+      }
+
+      .project-hero {
+        padding: 14px;
+      }
+
+      .placeholder {
+        min-height: 55vh;
+      }
+
+      .process-image {
+        padding: 14px;
+      }
+
+      .process-image .placeholder {
+        min-height: 50vh;
+      }
+
+      .process-copy {
+        padding: 40px 20px;
+        min-height: 420px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="site-header">
+  <a class="brand" href="../index.html">FILE<span>403</span></a>
+
+  <nav class="nav">
+    <a href="../index.html#work">WORK</a>
+    <a href="../index.html#archive">ARCHIVE</a>
+    <a href="../index.html#about">ABOUT</a>
+  </nav>
+</header>
+
+
+<main>
+
+  <section class="project-intro">
+
+    <div class="file-meta">
+      FILE / 001
+    </div>
+
+    <div class="intro-main">
+
+      <h1 class="project-title">
+        PROJECT<br>
+        TITLE
+      </h1>
+
+      <div class="intro-bottom">
+
+        <p class="project-description">
+          프로젝트에 대한 핵심 설명이 들어가는 영역입니다.
+          어떤 문제를 다뤘고 무엇을 만들었는지 짧게 설명합니다.
+          실제 콘텐츠를 정한 뒤 프로젝트별 내용으로 교체합니다.
+        </p>
+
+        <div class="project-data">
+
+          <div class="data-row">
+            <span>TYPE</span>
+            <span>VISUAL / DESIGN</span>
+          </div>
+
+          <div class="data-row">
+            <span>ROLE</span>
+            <span>PLANNING / PRODUCTION</span>
+          </div>
+
+          <div class="data-row">
+            <span>YEAR</span>
+            <span>2026</span>
+          </div>
+
+          <div class="data-row">
+            <span>STATUS</span>
+            <span>COMPLETED</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="project-hero">
+    <div class="placeholder">
+      <span>PROJECT HERO / 001</span>
+    </div>
+  </section>
+
+
+  <section class="overview">
+
+    <div class="section-label">
+      OVERVIEW / 01
+    </div>
+
+    <div class="overview-content">
+
+      <h2>
+        PROJECT<br>
+        OVERVIEW
+      </h2>
+
+      <p>
+        프로젝트의 배경과 목적을 설명하는 영역입니다.
+        단순히 무엇을 만들었는지보다 왜 작업을 시작했고,
+        어떤 문제를 해결하려 했는지 보여주는 공간입니다.
+      </p>
+
+    </div>
+  </section>
+
+
+  <section class="process">
+
+    <div class="process-row">
+
+      <div class="process-image">
+        <div class="placeholder">
+          <span>PROCESS IMAGE / 01</span>
+        </div>
+      </div>
+
+      <div class="process-copy">
+
+        <div class="process-number">
+          PROCESS / 01
+        </div>
+
+        <div class="process-text">
+
+          <h3>
+            BEFORE<br>
+            & ANALYSIS
+          </h3>
+
+          <p>
+            기존 상태와 문제를 보여주는 영역입니다.
+            사진 프로젝트라면 원본, 디자인이라면 기존안,
+            자동화 프로젝트라면 기존 업무 프로세스를 배치할 수 있습니다.
+          </p>
+
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="process-row reverse">
+
+      <div class="process-image">
+        <div class="placeholder">
+          <span>PROCESS IMAGE / 02</span>
+        </div>
+      </div>
+
+      <div class="process-copy">
+
+        <div class="process-number">
+          PROCESS / 02
+        </div>
+
+        <div class="process-text">
+
+          <h3>
+            PROCESS<br>
+            & DEVELOPMENT
+          </h3>
+
+          <p>
+            실제 작업 과정과 판단을 보여주는 영역입니다.
+            보정 과정, 디자인 전개, 데이터 처리 방식,
+            자동화 로직 등 프로젝트에 맞게 자유롭게 구성합니다.
+          </p>
+
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="process-row">
+
+      <div class="process-image">
+        <div class="placeholder">
+          <span>PROCESS IMAGE / 03</span>
+        </div>
+      </div>
+
+      <div class="process-copy">
+
+        <div class="process-number">
+          PROCESS / 03
+        </div>
+
+        <div class="process-text">
+
+          <h3>
+            FINAL<br>
+            OUTPUT
+          </h3>
+
+          <p>
+            최종 결과물을 보여주는 영역입니다.
+            프로젝트에 따라 완성 이미지, 디자인 결과물,
+            데이터 화면 또는 개선된 프로세스를 배치합니다.
+          </p>
+
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="result">
+
+    <div class="section-label">
+      RESULT / 02
+    </div>
+
+    <div class="result-content">
+
+      <h2>
+        RESULT<br>
+        & OUTCOME
+      </h2>
+
+      <p>
+        최종 결과와 작업을 통해 개선된 내용을 정리합니다.
+        수치화할 수 있는 성과가 있다면 이 영역에서 함께 제시합니다.
+      </p>
+
+    </div>
+  </section>
+
+
+  <nav class="project-navigation">
+
+    <a href="../index.html#work">
+      <span class="nav-label">← BACK TO INDEX</span>
+      <span class="nav-title">SELECTED WORK</span>
+    </a>
+
+    <a href="#">
+      <span class="nav-label">NEXT FILE / 002 →</span>
+      <span class="nav-title">NEXT PROJECT</span>
+    </a>
+
+  </nav>
+
+</main>
+
+
+<footer>
+
+  <div class="footer-logo">
+    FILE<span>403</span>
+  </div>
+
+  <div>
+    PROJECT ARCHIVE / 2026
+  </div>
+
+</footer>
+
+</body>
+</html>
