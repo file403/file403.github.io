@@ -583,25 +583,136 @@
       margin-left: 27%;
     }
 
-    .after-bars i {
-      background: var(--accent);
-    }
+    .after-bars {
+  overflow: hidden;
+}
 
-    .after-bars i:nth-child(1) {
-      width: 100%;
-    }
+.after-bars i {
+  background: var(--accent);
+  transform-origin: left center;
+  will-change: width, transform;
+}
 
-    .after-bars i:nth-child(2) {
-      width: 86%;
-    }
+/* 각각 다른 움직임 */
+.after-bars i:nth-child(1) {
+  width: 92%;
+  animation: refineWave1 2.6s ease-in-out infinite alternate;
+}
 
-    .after-bars i:nth-child(3) {
-      width: 94%;
-    }
+.after-bars i:nth-child(2) {
+  width: 76%;
+  animation: refineWave2 2.1s ease-in-out infinite alternate;
+}
 
-    .after-bars i:nth-child(4) {
-      width: 68%;
-    }
+.after-bars i:nth-child(3) {
+  width: 88%;
+  animation: refineWave3 2.9s ease-in-out infinite alternate;
+}
+
+.after-bars i:nth-child(4) {
+  width: 62%;
+  animation: refineWave4 1.9s ease-in-out infinite alternate;
+}
+
+
+/* LINE 01 */
+
+@keyframes refineWave1 {
+  0% {
+    width: 72%;
+    transform: translateX(3%);
+  }
+
+  35% {
+    width: 96%;
+    transform: translateX(0);
+  }
+
+  70% {
+    width: 82%;
+    transform: translateX(8%);
+  }
+
+  100% {
+    width: 100%;
+    transform: translateX(1%);
+  }
+}
+
+
+/* LINE 02 */
+
+@keyframes refineWave2 {
+  0% {
+    width: 84%;
+    transform: translateX(8%);
+  }
+
+  40% {
+    width: 62%;
+    transform: translateX(18%);
+  }
+
+  75% {
+    width: 91%;
+    transform: translateX(3%);
+  }
+
+  100% {
+    width: 74%;
+    transform: translateX(12%);
+  }
+}
+
+
+/* LINE 03 */
+
+@keyframes refineWave3 {
+  0% {
+    width: 68%;
+    transform: translateX(13%);
+  }
+
+  30% {
+    width: 94%;
+    transform: translateX(2%);
+  }
+
+  65% {
+    width: 78%;
+    transform: translateX(9%);
+  }
+
+  100% {
+    width: 98%;
+    transform: translateX(0);
+  }
+}
+
+
+/* LINE 04 */
+
+@keyframes refineWave4 {
+  0% {
+    width: 54%;
+    transform: translateX(25%);
+  }
+
+  33% {
+    width: 80%;
+    transform: translateX(8%);
+  }
+
+  68% {
+    width: 61%;
+    transform: translateX(20%);
+  }
+
+  100% {
+    width: 88%;
+    transform: translateX(4%);
+  }
+}
 
     .comparison-foot {
       font-family: "Roboto Mono", monospace;
