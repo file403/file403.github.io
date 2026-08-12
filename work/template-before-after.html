@@ -55,6 +55,7 @@
       font-family: "Roboto Condensed", sans-serif;
       font-size: 20px;
       font-weight: 700;
+      letter-spacing: -0.03em;
     }
 
     .brand span {
@@ -79,11 +80,11 @@
       color: #ffffff;
     }
 
-    /* PROJECT INTRO */
+    /* INTRO */
 
     .project-intro {
-      min-height: 72vh;
-      padding: 48px 32px 60px;
+      min-height: 70vh;
+      padding: 52px 32px 64px;
       display: grid;
       grid-template-columns: 1fr 2.3fr;
       border-bottom: 1px solid var(--line);
@@ -118,7 +119,7 @@
     }
 
     .project-description {
-      max-width: 600px;
+      max-width: 620px;
       font-size: 16px;
       line-height: 1.9;
       color: #c6c6c6;
@@ -143,56 +144,7 @@
       color: var(--muted);
     }
 
-    /* HERO */
-
-    .project-hero {
-      padding: 24px;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .placeholder {
-      min-height: 78vh;
-      border: 1px solid #292929;
-      background:
-        linear-gradient(135deg, #131313, #080808 55%, #111111);
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
-
-    .placeholder::before,
-    .placeholder::after {
-      content: "";
-      position: absolute;
-      background: #272727;
-    }
-
-    .placeholder::before {
-      width: 1px;
-      height: 160%;
-      transform: rotate(35deg);
-    }
-
-    .placeholder::after {
-      height: 1px;
-      width: 160%;
-      transform: rotate(-20deg);
-    }
-
-    .placeholder span {
-      position: relative;
-      z-index: 2;
-      padding: 10px 14px;
-      background: #090909;
-      font-family: "Roboto Mono", monospace;
-      font-size: 10px;
-      color: var(--muted);
-      letter-spacing: 0.08em;
-    }
-
-    /* OVERVIEW */
+    /* COMMON SECTION */
 
     .overview,
     .retrospective {
@@ -236,9 +188,17 @@
 
     .process-row {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 3fr 2fr;
       min-height: 620px;
       border-bottom: 1px solid var(--line);
+    }
+
+    .process-row.reverse {
+      grid-template-columns: 2fr 3fr;
+    }
+
+    .process-row:last-child {
+      border-bottom: none;
     }
 
     .process-image {
@@ -256,8 +216,47 @@
       order: 1;
     }
 
-    .process-image .placeholder {
+    .placeholder {
+      width: 100%;
       min-height: 570px;
+      border: 1px solid #292929;
+      background:
+        linear-gradient(135deg, #131313, #080808 55%, #111111);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .placeholder::before,
+    .placeholder::after {
+      content: "";
+      position: absolute;
+      background: #272727;
+    }
+
+    .placeholder::before {
+      width: 1px;
+      height: 160%;
+      transform: rotate(35deg);
+    }
+
+    .placeholder::after {
+      height: 1px;
+      width: 160%;
+      transform: rotate(-20deg);
+    }
+
+    .placeholder span {
+      position: relative;
+      z-index: 2;
+      padding: 10px 14px;
+      background: #090909;
+      font-family: "Roboto Mono", monospace;
+      font-size: 10px;
+      color: var(--muted);
+      letter-spacing: 0.08em;
     }
 
     .process-copy {
@@ -291,27 +290,23 @@
 
     /* RESULT */
 
-    .result-row {
-      display: grid;
-      grid-template-columns: 4fr 1fr;
-      min-height: 760px;
+    .result {
       border-bottom: 1px solid var(--line);
     }
 
-    .result-media {
-      padding: 24px;
-      border-right: 1px solid var(--line);
+    .result-row {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
+      grid-template-columns: 3fr 2fr;
+      min-height: 620px;
     }
 
-    .result-media .placeholder {
-      min-height: 710px;
+    .result-image {
+      padding: 24px;
+      border-right: 1px solid var(--line);
     }
 
     .result-copy {
-      padding: 44px 30px;
+      padding: 44px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -319,17 +314,58 @@
 
     .result-copy h3 {
       font-family: "Roboto Condensed", sans-serif;
-      font-size: clamp(42px, 4vw, 68px);
+      font-size: clamp(46px, 5vw, 82px);
       line-height: 0.88;
       letter-spacing: -0.045em;
       margin-bottom: 28px;
     }
 
     .result-copy p {
+      max-width: 520px;
       color: #bdbdbd;
       font-size: 14px;
       line-height: 1.9;
       word-break: keep-all;
+    }
+
+    /* FINAL GALLERY */
+
+    .final-gallery {
+      padding: 120px 32px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .gallery-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 30px;
+      margin-bottom: 48px;
+    }
+
+    .gallery-title {
+      font-family: "Roboto Condensed", sans-serif;
+      font-size: clamp(48px, 6vw, 96px);
+      line-height: 0.9;
+      letter-spacing: -0.045em;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .gallery-grid .wide {
+      grid-column: 1 / -1;
+    }
+
+    .gallery-grid .placeholder {
+      min-height: 520px;
+    }
+
+    .gallery-grid .wide .placeholder {
+      min-height: 720px;
     }
 
     /* RETROSPECTIVE */
@@ -430,13 +466,17 @@
       }
 
       .process-image,
-      .result-media {
+      .result-image {
         border-right: none;
         border-bottom: 1px solid var(--line);
       }
 
-      .result-media {
+      .gallery-grid {
         grid-template-columns: 1fr;
+      }
+
+      .gallery-grid .wide {
+        grid-column: auto;
       }
 
       .project-navigation {
@@ -466,7 +506,8 @@
 
       .project-intro,
       .overview,
-      .retrospective {
+      .retrospective,
+      .final-gallery {
         padding: 72px 20px;
       }
 
@@ -474,21 +515,12 @@
         font-size: 64px;
       }
 
-      .project-hero {
+      .process-image,
+      .result-image {
         padding: 14px;
       }
 
       .placeholder {
-        min-height: 55vh;
-      }
-
-      .process-image,
-      .result-media {
-        padding: 14px;
-      }
-
-      .process-image .placeholder,
-      .result-media .placeholder {
         min-height: 50vh;
       }
 
@@ -496,6 +528,16 @@
       .result-copy {
         padding: 40px 20px;
         min-height: 380px;
+      }
+
+      .gallery-head {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .gallery-grid .placeholder,
+      .gallery-grid .wide .placeholder {
+        min-height: 50vh;
       }
     }
   </style>
@@ -512,7 +554,6 @@
     <a href="../index.html#about">ABOUT</a>
   </nav>
 </header>
-
 
 <main>
 
@@ -535,7 +576,7 @@
 
         <p class="project-description">
           기존 결과물 또는 기존 상태를 분석하고 개선한 프로젝트를 위한 템플릿입니다.
-          프로젝트의 목적, 문제점, 개선 방향과 최종 결과를 간결하게 소개합니다.
+          무엇을 개선했고 어떤 방식으로 결과를 만들어냈는지 정리합니다.
         </p>
 
         <div class="project-data">
@@ -565,16 +606,6 @@
     </div>
   </section>
 
-
-  <!-- HERO -->
-
-  <section class="project-hero">
-    <div class="placeholder">
-      <span>PROJECT HERO / BEFORE + AFTER</span>
-    </div>
-  </section>
-
-
   <!-- OVERVIEW -->
 
   <section class="overview">
@@ -592,13 +623,12 @@
 
       <p>
         프로젝트가 시작된 배경과 목적을 설명합니다.
-        무엇이 문제였는지, 왜 개선이 필요했는지,
-        그리고 어떤 방향으로 결과를 만들고자 했는지를 정리합니다.
+        기존 상태에서 어떤 문제가 있었고,
+        왜 개선이 필요했는지 전체적인 맥락을 정리합니다.
       </p>
 
     </div>
   </section>
-
 
   <!-- PROCESS 01 -->
 
@@ -626,16 +656,15 @@
           </h3>
 
           <p>
-            기존 원본, 기존 상세페이지, 기존 업무 프로세스 등
-            개선 이전의 상태를 보여주는 영역입니다.
-            무엇이 문제였고 어떤 부분을 개선해야 했는지 분석합니다.
+            개선 이전의 상태를 보여주고 문제를 분석합니다.
+            기존 상세페이지, RAW 이미지, 기존 업무 프로세스 등
+            프로젝트에 맞는 원본 자료를 배치합니다.
           </p>
 
         </div>
       </div>
 
     </div>
-
 
     <!-- PROCESS 02 -->
 
@@ -661,9 +690,9 @@
           </h3>
 
           <p>
-            실제 개선 과정과 판단을 기록합니다.
-            디자인 전개, 보정 과정, 데이터 구조,
-            자동화 로직 등 프로젝트 성격에 맞는 제작 과정을 보여줍니다.
+            개선 방향을 실제 결과물로 전개하는 과정입니다.
+            디자인 수정, 보정, 데이터 구조, 자동화 로직 등
+            프로젝트별 핵심 작업 과정을 정리합니다.
           </p>
 
         </div>
@@ -673,41 +702,38 @@
 
   </section>
 
-
   <!-- RESULT -->
 
-  <section class="result-row">
+  <section class="result">
 
-    <div class="result-media">
+    <div class="result-row">
 
-      <div class="placeholder">
-        <span>FINAL OUTPUT / 01</span>
+      <div class="result-image">
+        <div class="placeholder">
+          <span>FINAL OUTPUT / PRIMARY</span>
+        </div>
       </div>
 
-      <div class="placeholder">
-        <span>FINAL OUTPUT / 02</span>
-      </div>
+      <div class="result-copy">
 
-    </div>
+        <div class="process-number">
+          RESULT
+        </div>
 
-    <div class="result-copy">
+        <div>
 
-      <div class="process-number">
-        RESULT
-      </div>
+          <h3>
+            FINAL<br>
+            OUTPUT
+          </h3>
 
-      <div>
+          <p>
+            프로젝트의 대표 최종 결과물을 보여주는 영역입니다.
+            가장 중요한 완성본 한 장을 배치하고,
+            무엇이 달라졌는지 간결하게 설명합니다.
+          </p>
 
-        <h3>
-          FINAL<br>
-          OUTPUT
-        </h3>
-
-        <p>
-          최종 결과물을 집중적으로 보여주는 영역입니다.
-          완성 이미지, 상세페이지, 데이터 화면 등
-          프로젝트에 맞게 최종 산출물을 배치합니다.
-        </p>
+        </div>
 
       </div>
 
@@ -715,6 +741,48 @@
 
   </section>
 
+  <!-- FINAL GALLERY : OPTIONAL -->
+
+  <section class="final-gallery">
+
+    <div class="gallery-head">
+
+      <div>
+        <div class="section-label">
+          FINAL GALLERY / OPTIONAL
+        </div>
+
+        <h2 class="gallery-title">
+          SELECTED<br>
+          OUTPUTS
+        </h2>
+      </div>
+
+    </div>
+
+    <div class="gallery-grid">
+
+      <div class="wide">
+        <div class="placeholder">
+          <span>FINAL OUTPUT / FULL WIDTH</span>
+        </div>
+      </div>
+
+      <div>
+        <div class="placeholder">
+          <span>FINAL DETAIL / 01</span>
+        </div>
+      </div>
+
+      <div>
+        <div class="placeholder">
+          <span>FINAL DETAIL / 02</span>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
 
   <!-- RETROSPECTIVE -->
 
@@ -732,15 +800,14 @@
       </h2>
 
       <p>
-        프로젝트를 마친 뒤의 평가와 배운 점을 기록합니다.
-        실제 성과나 개선 수치가 있다면 함께 제시하고,
-        작업 과정에서 확인한 한계와 다음 개선 방향도 정리합니다.
+        작업을 마친 뒤의 평가와 배운 점을 정리합니다.
+        개선된 부분, 실제 성과, 아쉬웠던 점,
+        이후 보완할 방향 등을 기록합니다.
       </p>
 
     </div>
 
   </section>
-
 
   <!-- NAVIGATION -->
 
@@ -759,7 +826,6 @@
   </nav>
 
 </main>
-
 
 <footer>
 
