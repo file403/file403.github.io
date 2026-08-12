@@ -599,7 +599,34 @@
       color: #ffffff;
     }
 
+.contact-links {
+  align-items: center;
+  gap: 24px;
+}
 
+.contact-email {
+  font-family: "Roboto Mono", monospace;
+  font-size: 11px;
+  color: var(--accent);
+}
+
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-link img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
     /* ========================================
        FOOTER
     ======================================== */
@@ -1436,21 +1463,25 @@
       </h2>
 
 
-      <div class="contact-links">
+     <div class="contact-links">
 
-        <a href="#">
-          EMAIL
-        </a>
+  <span class="contact-email">
+    ABCDEDF@ABCD.COM
+  </span>
 
-        <a href="#">
-          BEHANCE
-        </a>
+  <div class="social-links">
 
-        <a href="#">
-          GITHUB
-        </a>
+    <span class="social-link">
+      <img src="assets/icons/instagram.svg" alt="Instagram">
+    </span>
 
-      </div>
+    <span class="social-link">
+      <img src="assets/icons/youtube.svg" alt="YouTube">
+    </span>
+
+  </div>
+
+</div>
 
 
     </div>
