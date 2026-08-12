@@ -11,13 +11,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
 
   <style>
-
     :root {
       --bg: #000000;
       --text: #f2f2f2;
       --muted: #8a8a8a;
       --line: #252525;
-      --line-light: #3a3a3a;
       --accent: #e34219;
     }
 
@@ -48,16 +46,18 @@
     }
 
 
-    /* ==================================================
+    /* ========================================
        HEADER
-    ================================================== */
+    ======================================== */
 
     .site-header {
       height: 72px;
       padding: 0 32px;
+
       display: flex;
       align-items: center;
       justify-content: space-between;
+
       border-bottom: 1px solid var(--line);
     }
 
@@ -75,6 +75,7 @@
     .nav {
       display: flex;
       gap: 18px;
+
       font-family: "Roboto Mono", monospace;
       font-size: 11px;
     }
@@ -82,6 +83,7 @@
     .nav a {
       color: var(--accent);
       padding: 7px 10px;
+
       transition:
         background 0.2s ease,
         color 0.2s ease;
@@ -94,15 +96,18 @@
     }
 
 
-    /* ==================================================
+    /* ========================================
        ABOUT INTRO
-    ================================================== */
+    ======================================== */
 
     .about-intro {
       min-height: 68vh;
+
       display: grid;
       grid-template-columns: 1fr 2.3fr;
+
       padding: 52px 32px 68px;
+
       border-bottom: 1px solid var(--line);
     }
 
@@ -120,9 +125,12 @@
 
     .about-title {
       font-family: "Roboto Condensed", sans-serif;
+
       font-size: clamp(90px, 13vw, 210px);
+
       line-height: 0.78;
       letter-spacing: -0.065em;
+
       text-transform: uppercase;
     }
 
@@ -130,14 +138,18 @@
       display: grid;
       grid-template-columns: 1.3fr 1fr;
       gap: 60px;
+
       margin-top: 80px;
     }
 
     .about-description {
       max-width: 650px;
+
       color: #c6c6c6;
+
       font-size: 16px;
       line-height: 1.9;
+
       word-break: keep-all;
     }
 
@@ -147,9 +159,11 @@
 
     .meta-row {
       min-height: 44px;
+
       display: grid;
       grid-template-columns: 100px 1fr;
       align-items: center;
+
       border-bottom: 1px solid var(--line);
 
       font-family: "Roboto Mono", monospace;
@@ -161,1032 +175,103 @@
     }
 
 
-    /* ==================================================
-       COMMON
-    ================================================== */
+    /* ========================================
+       COMMON SECTION
+    ======================================== */
 
     .section-kicker {
       margin-bottom: 16px;
+
       font-family: "Roboto Mono", monospace;
       font-size: 11px;
+
       color: var(--accent);
+
       letter-spacing: 0.05em;
     }
 
     .section-title {
       font-family: "Roboto Condensed", sans-serif;
+
       font-size: clamp(56px, 8vw, 120px);
+
       line-height: 0.82;
       letter-spacing: -0.055em;
+
       text-transform: uppercase;
     }
 
 
-    /* ==================================================
+    /* ========================================
        WORKING APPROACH
-    ================================================== */
+    ======================================== */
 
     .approach {
       padding: 120px 32px;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .approach-heading {
-      margin-bottom: 78px;
-    }
-
-    .approach-console {
-      position: relative;
-      overflow: hidden;
-      border: 1px solid var(--line-light);
-      background: #020202;
-    }
-
-    .approach-console::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-
-      background:
-        linear-gradient(
-          rgba(227, 66, 25, 0.028) 1px,
-          transparent 1px
-        ),
-        linear-gradient(
-          90deg,
-          rgba(227, 66, 25, 0.028) 1px,
-          transparent 1px
-        );
-
-      background-size: 28px 28px;
-      opacity: 0.75;
-    }
-
-
-    /* ==================================================
-       CONSOLE HEADER
-    ================================================== */
-
-    .console-status {
-      min-height: 46px;
-      padding: 0 18px;
-
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
-      position: relative;
-      z-index: 2;
 
       border-bottom: 1px solid var(--line);
-
-      font-family: "Roboto Mono", monospace;
-      font-size: 9px;
-      color: var(--muted);
     }
 
-    .console-status-right {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      color: var(--accent);
-    }
-
-    .status-light {
-      width: 7px;
-      height: 7px;
-      background: var(--accent);
-      animation: statusBlink 1.8s infinite;
-    }
-
-
-    /* ==================================================
-       APPROACH TABS
-    ================================================== */
-
-    .approach-tabs {
+    .approach-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
 
-      position: relative;
-      z-index: 2;
+      margin-top: 72px;
 
+      border-top: 1px solid var(--line);
+      border-left: 1px solid var(--line);
+    }
+
+    .approach-item {
+      min-height: 280px;
+
+      padding: 28px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      border-right: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
     }
 
-    .approach-tab {
-      min-height: 94px;
-      padding: 20px 24px;
-
-      border: 0;
-      border-right: 1px solid var(--line);
-
-      background: transparent;
-      color: var(--text);
-
-      cursor: pointer;
-      text-align: left;
-
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-
-      transition:
-        background 0.22s ease,
-        color 0.22s ease;
-    }
-
-    .approach-tab:last-child {
-      border-right: none;
-    }
-
-    .approach-tab-number {
+    .approach-number {
       font-family: "Roboto Mono", monospace;
-      font-size: 9px;
+      font-size: 10px;
+
       color: var(--accent);
     }
 
-    .approach-tab-name {
+    .approach-item h3 {
       font-family: "Roboto Condensed", sans-serif;
-      font-size: clamp(26px, 2.5vw, 42px);
-      font-weight: 600;
+
+      font-size: 44px;
+
       line-height: 0.9;
-      letter-spacing: -0.035em;
+      letter-spacing: -0.04em;
     }
 
-    .approach-tab:hover,
-    .approach-tab.active {
-      background: var(--accent);
-      color: #ffffff;
-    }
+    .approach-item p {
+      margin-top: 18px;
 
-    .approach-tab:hover .approach-tab-number,
-    .approach-tab.active .approach-tab-number {
-      color: #ffffff;
-    }
+      max-width: 340px;
 
-
-    /* ==================================================
-       APPROACH SCREEN
-    ================================================== */
-
-    .approach-screen {
-      min-height: 540px;
-      position: relative;
-      z-index: 2;
-      overflow: hidden;
-    }
-
-    .approach-panel {
-      position: absolute;
-      inset: 0;
-
-      display: grid;
-      grid-template-rows: 1fr auto;
-
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(7px);
-
-      transition:
-        opacity 0.28s ease,
-        transform 0.28s ease,
-        visibility 0.28s ease;
-    }
-
-    .approach-panel.active {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0);
-    }
-
-    .diagram-area {
-      min-height: 420px;
-      padding: 52px 6%;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-
-    /* ==================================================
-       PANEL INFO
-    ================================================== */
-
-    .panel-info {
-      min-height: 115px;
-      padding: 22px 26px;
-
-      border-top: 1px solid var(--line);
-
-      display: grid;
-      grid-template-columns: 1fr 1.3fr auto;
-      gap: 32px;
-      align-items: center;
-
-      background: rgba(0, 0, 0, 0.84);
-    }
-
-    .panel-info-title {
-      font-family: "Roboto Condensed", sans-serif;
-      font-size: 34px;
-      font-weight: 600;
-      letter-spacing: -0.03em;
-    }
-
-    .panel-info-copy {
-      max-width: 600px;
       color: #bdbdbd;
+
       font-size: 14px;
       line-height: 1.8;
+
       word-break: keep-all;
     }
 
-    .panel-info-status {
-      font-family: "Roboto Mono", monospace;
-      font-size: 9px;
-      color: var(--accent);
-      white-space: nowrap;
-    }
 
-
-    /* ==================================================
-       MAKE
-    ================================================== */
-
-    .make-system {
-      width: min(1120px, 100%);
-
-      display: grid;
-      grid-template-columns:
-        minmax(150px, 1fr)
-        minmax(100px, 0.65fr)
-        minmax(180px, 1.2fr)
-        minmax(100px, 0.65fr)
-        minmax(150px, 1fr);
-
-      align-items: center;
-    }
-
-    .large-node {
-      min-height: 145px;
-      padding: 22px;
-
-      border: 1px solid #454545;
-
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-
-      position: relative;
-      background: rgba(0, 0, 0, 0.8);
-    }
-
-    .large-node-label {
-      font-family: "Roboto Mono", monospace;
-      font-size: 10px;
-      color: var(--muted);
-    }
-
-    .large-node strong {
-      font-family: "Roboto Condensed", sans-serif;
-      font-size: clamp(34px, 4vw, 64px);
-      line-height: 0.85;
-      letter-spacing: -0.04em;
-      font-weight: 600;
-    }
-
-    .large-node-center {
-      min-height: 175px;
-      border-color: var(--accent);
-      color: var(--accent);
-    }
-
-    .large-node-center::before,
-    .large-node-center::after {
-      content: "";
-      position: absolute;
-      width: 12px;
-      height: 12px;
-    }
-
-    .large-node-center::before {
-      top: -1px;
-      left: -1px;
-      border-top: 3px solid var(--accent);
-      border-left: 3px solid var(--accent);
-    }
-
-    .large-node-center::after {
-      bottom: -1px;
-      right: -1px;
-      border-bottom: 3px solid var(--accent);
-      border-right: 3px solid var(--accent);
-    }
-
-    .data-line {
-      height: 1px;
-      background: #4d4d4d;
-      position: relative;
-    }
-
-    .data-line::after {
-      content: "";
-      position: absolute;
-
-      right: -1px;
-      top: -5px;
-
-      width: 0;
-      height: 0;
-
-      border-top: 5px solid transparent;
-      border-bottom: 5px solid transparent;
-      border-left: 8px solid #555555;
-    }
-
-    .data-packet {
-      width: 11px;
-      height: 11px;
-
-      position: absolute;
-      top: -5px;
-      left: 0;
-
-      background: var(--accent);
-
-      animation: dataTravel 2.4s linear infinite;
-    }
-
-    .data-packet.delay {
-      animation-delay: 1.2s;
-    }
-
-
-    /* ==================================================
-       REFINE
-    ================================================== */
-
-    .refine-system {
-      width: min(1160px, 100%);
-
-      display: grid;
-      grid-template-columns: 1fr 180px 1fr;
-      gap: 38px;
-      align-items: center;
-    }
-
-    .comparison-screen {
-      min-height: 250px;
-      padding: 26px;
-
-      border: 1px solid #454545;
-
-      background: rgba(0, 0, 0, 0.82);
-
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-
-      overflow: hidden;
-    }
-
-    .comparison-head {
-      display: flex;
-      justify-content: space-between;
-
-      font-family: "Roboto Mono", monospace;
-      font-size: 10px;
-      color: var(--muted);
-    }
-
-    .comparison-bars {
-      display: flex;
-      flex-direction: column;
-      gap: 17px;
-
-      overflow: hidden;
-    }
-
-    .comparison-bars i {
-      display: block;
-      height: 5px;
-
-      /* 핵심:
-         왼쪽 시작점은 항상 고정 */
-      margin-left: 0;
-      transform: none;
-
-      transform-origin: left center;
-      will-change: width;
-    }
-
-
-    /* BEFORE — 불규칙한 상태 */
-
-    .before-bars i {
-  background: #555555;
-  margin-left: 0;
-  transform: none;
-}
-
-.before-bars i:nth-child(1) {
-  width: 83%;
-}
-
-.before-bars i:nth-child(2) {
-  width: 56%;
-}
-
-.before-bars i:nth-child(3) {
-  width: 95%;
-}
-
-.before-bars i:nth-child(4) {
-  width: 47%;
-}
-
-
-    /* AFTER — 정리되어 있지만 계속 조정되는 상태 */
-
-    .after-bars i {
-      background: var(--accent);
-    }
-
-    .after-bars i:nth-child(1) {
-      animation: afterWave1 3s ease-in-out infinite alternate;
-    }
-
-    .after-bars i:nth-child(2) {
-      animation: afterWave2 2.7s ease-in-out infinite alternate;
-    }
-
-    .after-bars i:nth-child(3) {
-      animation: afterWave3 3.2s ease-in-out infinite alternate;
-    }
-
-    .after-bars i:nth-child(4) {
-      animation: afterWave4 2.5s ease-in-out infinite alternate;
-    }
-
-
-    /* BEFORE ANIMATION */
-
-    @keyframes beforeWave1 {
-      0%   { width: 53%; }
-      35%  { width: 86%; }
-      70%  { width: 61%; }
-      100% { width: 93%; }
-    }
-
-    @keyframes beforeWave2 {
-      0%   { width: 81%; }
-      40%  { width: 43%; }
-      72%  { width: 72%; }
-      100% { width: 57%; }
-    }
-
-    @keyframes beforeWave3 {
-      0%   { width: 67%; }
-      32%  { width: 95%; }
-      65%  { width: 55%; }
-      100% { width: 84%; }
-    }
-
-    @keyframes beforeWave4 {
-      0%   { width: 42%; }
-      38%  { width: 73%; }
-      68%  { width: 49%; }
-      100% { width: 65%; }
-    }
-
-
-    /* AFTER ANIMATION */
-
-    @keyframes afterWave1 {
-      0%   { width: 84%; }
-      40%  { width: 96%; }
-      70%  { width: 89%; }
-      100% { width: 100%; }
-    }
-
-    @keyframes afterWave2 {
-      0%   { width: 71%; }
-      35%  { width: 84%; }
-      72%  { width: 77%; }
-      100% { width: 89%; }
-    }
-
-    @keyframes afterWave3 {
-      0%   { width: 82%; }
-      38%  { width: 94%; }
-      68%  { width: 87%; }
-      100% { width: 97%; }
-    }
-
-    @keyframes afterWave4 {
-      0%   { width: 59%; }
-      42%  { width: 72%; }
-      70%  { width: 65%; }
-      100% { width: 78%; }
-    }
-
-
-    .comparison-foot {
-      font-family: "Roboto Mono", monospace;
-      font-size: 9px;
-      color: #666666;
-    }
-
-    .refine-processor {
-      height: 180px;
-
-      border: 1px solid var(--accent);
-
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-
-      color: var(--accent);
-
-      background: rgba(227, 66, 25, 0.025);
-
-      position: relative;
-
-      animation: processorPulse 2.2s ease-in-out infinite;
-    }
-
-    .refine-processor span {
-      font-family: "Roboto Mono", monospace;
-      font-size: 9px;
-      margin-bottom: 13px;
-    }
-
-    .refine-processor strong {
-      font-family: "Roboto Condensed", sans-serif;
-      font-size: 52px;
-      line-height: 0.85;
-    }
-
-    .refine-processor small {
-      margin-top: 14px;
-      font-family: "Roboto Mono", monospace;
-      font-size: 8px;
-    }
-
-
-    /* ==================================================
-       SYSTEMIZE — AUTOMATION FACTORY
-    ================================================== */
-
-    .factory-system {
-      position: relative;
-
-      width: min(1180px, 100%);
-      height: 300px;
-
-      overflow: hidden;
-
-      border-top: 1px solid #303030;
-      border-bottom: 1px solid #303030;
-
-      background:
-        linear-gradient(
-          rgba(255,255,255,0.012) 1px,
-          transparent 1px
-        ),
-        linear-gradient(
-          90deg,
-          rgba(255,255,255,0.012) 1px,
-          transparent 1px
-        );
-
-      background-size: 24px 24px;
-    }
-
-
-    /* LABELS */
-
-    .factory-label {
-      position: absolute;
-      top: 18px;
-
-      z-index: 6;
-
-      font-family: "Roboto Mono", monospace;
-      font-size: 9px;
-      color: var(--muted);
-    }
-
-    .factory-label-input {
-      left: 18px;
-    }
-
-    .factory-label-output {
-      right: 18px;
-    }
-
-
-    /* CONVEYOR */
-
-    .factory-belt {
-      position: absolute;
-
-      left: 0;
-      right: 0;
-
-      top: 136px;
-
-      height: 76px;
-
-      border-top: 1px solid #494949;
-      border-bottom: 1px solid #494949;
-
-      background:
-        repeating-linear-gradient(
-          90deg,
-          transparent 0,
-          transparent 28px,
-          #242424 29px,
-          #242424 31px
-        );
-
-      animation: conveyorMove 1.2s linear infinite;
-    }
-
-    .factory-belt::before,
-    .factory-belt::after {
-      content: "";
-
-      position: absolute;
-
-      left: 0;
-      right: 0;
-
-      height: 1px;
-
-      background: #191919;
-    }
-
-    .factory-belt::before {
-      top: 18px;
-    }
-
-    .factory-belt::after {
-      bottom: 18px;
-    }
-
-
-    /* INPUT OBJECTS */
-
-    .factory-inputs,
-    .factory-outputs {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-    }
-
-    .factory-shape {
-      position: absolute;
-
-      top: 155px;
-      left: 1%;
-
-      z-index: 3;
-
-      display: block;
-
-      animation:
-        inputObjectMove 5.5s linear infinite;
-    }
-
-
-    /* SQUARE */
-
-    .shape-square {
-      width: 34px;
-      height: 34px;
-
-      border: 2px solid #888888;
-
-      animation-delay: 0s;
-    }
-
-
-    /* CIRCLE */
-
-    .shape-circle {
-      width: 36px;
-      height: 36px;
-
-      border: 2px solid #777777;
-      border-radius: 50%;
-
-      animation-delay: -1.4s;
-    }
-
-
-    /* RECTANGLE */
-
-    .shape-rect {
-      width: 52px;
-      height: 27px;
-
-      border: 2px solid #777777;
-
-      top: 160px;
-
-      animation-delay: -2.8s;
-    }
-
-
-    /* TRIANGLE */
-
-    .shape-triangle {
-      width: 0;
-      height: 0;
-
-      top: 155px;
-
-      border-left: 19px solid transparent;
-      border-right: 19px solid transparent;
-      border-bottom: 34px solid #777777;
-
-      animation-delay: -4.1s;
-    }
-
-    .shape-triangle::after {
-      content: "";
-
-      position: absolute;
-
-      left: -15px;
-      top: 5px;
-
-      width: 0;
-      height: 0;
-
-      border-left: 15px solid transparent;
-      border-right: 15px solid transparent;
-      border-bottom: 27px solid #020202;
-    }
-
-
-    /* CENTRAL MACHINE */
-
-    .factory-machine {
-      position: absolute;
-
-      left: 50%;
-      top: 50%;
-
-      z-index: 5;
-
-      width: 250px;
-      height: 230px;
-
-      transform: translate(-50%, -50%);
-
-      border: 1px solid var(--accent);
-
-      background: #040404;
-
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-
-      padding: 18px;
-
-      overflow: hidden;
-
-      box-shadow:
-        0 0 0 1px rgba(227, 66, 25, 0.08);
-    }
-
-    .factory-machine::before,
-    .factory-machine::after {
-      content: "";
-
-      position: absolute;
-
-      width: 23px;
-      height: 23px;
-    }
-
-    .factory-machine::before {
-      top: -1px;
-      left: -1px;
-
-      border-top: 4px solid var(--accent);
-      border-left: 4px solid var(--accent);
-    }
-
-    .factory-machine::after {
-      right: -1px;
-      bottom: -1px;
-
-      border-right: 4px solid var(--accent);
-      border-bottom: 4px solid var(--accent);
-    }
-
-
-    /* SCANNER */
-
-    .machine-scan {
-      position: absolute;
-
-      left: 0;
-      right: 0;
-      top: 0;
-
-      height: 2px;
-
-      background: var(--accent);
-
-      opacity: 0.7;
-
-      box-shadow:
-        0 0 12px rgba(227, 66, 25, 0.55);
-
-      animation: machineScan 2.1s ease-in-out infinite;
-    }
-
-
-    .machine-top {
-      display: flex;
-      justify-content: space-between;
-
-      position: relative;
-      z-index: 2;
-
-      font-family: "Roboto Mono", monospace;
-      font-size: 8px;
-    }
-
-    .machine-top span:first-child {
-      color: var(--muted);
-    }
-
-    .machine-active {
-      color: var(--accent);
-    }
-
-
-    .machine-center {
-      position: relative;
-      z-index: 2;
-
-      text-align: center;
-    }
-
-    .machine-center small {
-      display: block;
-
-      font-family: "Roboto Mono", monospace;
-      font-size: 9px;
-
-      color: var(--accent);
-
-      margin-bottom: 8px;
-    }
-
-    .machine-center strong {
-      display: block;
-
-      font-family: "Roboto Condensed", sans-serif;
-      font-size: 70px;
-      line-height: 0.78;
-
-      color: var(--accent);
-      letter-spacing: -0.06em;
-    }
-
-    .machine-center span {
-      display: block;
-
-      margin-top: 12px;
-
-      font-family: "Roboto Mono", monospace;
-      font-size: 8px;
-
-      color: #777777;
-    }
-
-
-    /* MACHINE STATUS */
-
-    .machine-readout {
-      position: relative;
-      z-index: 2;
-
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-
-      border-top: 1px solid #292929;
-    }
-
-    .machine-readout span {
-      padding: 8px 4px;
-
-      font-family: "Roboto Mono", monospace;
-      font-size: 7px;
-      color: #777777;
-
-      border-bottom: 1px solid #202020;
-    }
-
-    .machine-readout span:nth-child(even) {
-      text-align: right;
-      color: var(--accent);
-    }
-
-
-    /* OUTPUT OBJECTS */
-
-    .output-box {
-      position: absolute;
-
-      width: 39px;
-      height: 39px;
-
-      top: 153px;
-      left: 54%;
-
-      z-index: 3;
-
-      border: 2px solid var(--accent);
-
-      background: rgba(227, 66, 25, 0.08);
-
-      animation:
-        outputObjectMove 4.2s linear infinite;
-    }
-
-    .output-box:nth-child(1) {
-      animation-delay: 0s;
-    }
-
-    .output-box:nth-child(2) {
-      animation-delay: -1.4s;
-    }
-
-    .output-box:nth-child(3) {
-      animation-delay: -2.8s;
-    }
-
-
-    /* OUTPUT MARK */
-
-    .output-box::after {
-      content: "";
-
-      position: absolute;
-
-      left: 50%;
-      top: 50%;
-
-      width: 8px;
-      height: 8px;
-
-      transform: translate(-50%, -50%);
-
-      background: var(--accent);
-    }
-
-
-    /* FACTORY BOTTOM TEXT */
-
-    .factory-sequence {
-      position: absolute;
-
-      left: 18px;
-      right: 18px;
-      bottom: 18px;
-
-      z-index: 6;
-
-      display: flex;
-      justify-content: space-between;
-
-      font-family: "Roboto Mono", monospace;
-      font-size: 8px;
-      color: #595959;
-    }
-
-    .factory-sequence span:nth-child(2) {
-      color: var(--accent);
-    }
-
-
-    /* ==================================================
+    /* ========================================
        TOOLKIT
-    ================================================== */
+    ======================================== */
 
     .toolkit {
       padding: 120px 32px;
+
       border-bottom: 1px solid var(--line);
     }
 
@@ -1194,15 +279,20 @@
       display: grid;
       grid-template-columns: 1.2fr 1fr;
       gap: 60px;
+
       align-items: end;
+
       margin-bottom: 80px;
     }
 
     .toolkit-head p {
       max-width: 520px;
+
       color: #bdbdbd;
+
       line-height: 1.8;
       font-size: 14px;
+
       word-break: keep-all;
     }
 
@@ -1242,11 +332,13 @@
       display: grid;
       grid-template-columns: 1.1fr 1fr 100px;
       align-items: center;
+
       gap: 24px;
 
       padding: 0 18px;
 
       cursor: pointer;
+
       text-align: left;
 
       transition:
@@ -1264,12 +356,14 @@
       font-family: "Roboto Condensed", sans-serif;
       font-weight: 600;
       font-size: 22px;
+
       letter-spacing: -0.02em;
     }
 
     .tool-level {
       font-family: "Roboto Mono", monospace;
       font-size: 9px;
+
       text-align: right;
     }
 
@@ -1281,6 +375,7 @@
 
     .tool-meter i {
       display: block;
+
       height: 7px;
 
       background: var(--accent);
@@ -1305,10 +400,13 @@
     }
 
 
-    /* TOOL DETAIL */
+    /* ========================================
+       TOOL DETAIL
+    ======================================== */
 
     .tool-detail {
       min-height: 560px;
+
       padding: 36px;
 
       display: flex;
@@ -1318,7 +416,9 @@
 
     .tool-detail-number {
       font-family: "Roboto Mono", monospace;
+
       color: var(--accent);
+
       font-size: 11px;
     }
 
@@ -1337,13 +437,14 @@
       color: var(--accent);
 
       font-family: "Roboto Mono", monospace;
-      font-size: 10px;
 
+      font-size: 10px;
       line-height: 1.7;
     }
 
     .tool-detail p {
       margin-top: 28px;
+
       max-width: 440px;
 
       color: #bdbdbd;
@@ -1372,32 +473,37 @@
 
     .tool-status strong {
       color: var(--accent);
+
       font-weight: 400;
     }
 
 
-    /* ==================================================
+    /* ========================================
        EXPERIENCE
-    ================================================== */
+    ======================================== */
 
     .experience {
       padding: 120px 32px;
+
       border-bottom: 1px solid var(--line);
     }
 
     .experience-list {
       margin-top: 70px;
+
       border-top: 1px solid var(--line);
     }
 
     .experience-row {
       min-height: 94px;
+
       padding: 0 4px;
 
       display: grid;
       grid-template-columns: 120px 1fr 220px;
 
       gap: 24px;
+
       align-items: center;
 
       border-bottom: 1px solid var(--line);
@@ -1406,11 +512,13 @@
     .experience-year {
       font-family: "Roboto Mono", monospace;
       font-size: 10px;
+
       color: var(--accent);
     }
 
     .experience-title {
       font-family: "Roboto Condensed", sans-serif;
+
       font-size: 34px;
 
       line-height: 0.95;
@@ -1422,16 +530,18 @@
       font-size: 10px;
 
       color: var(--muted);
+
       text-align: right;
     }
 
 
-    /* ==================================================
+    /* ========================================
        CONTACT
-    ================================================== */
+    ======================================== */
 
     .contact {
       min-height: 500px;
+
       padding: 110px 32px;
 
       display: grid;
@@ -1443,6 +553,7 @@
     .contact-label {
       font-family: "Roboto Mono", monospace;
       font-size: 11px;
+
       color: var(--accent);
     }
 
@@ -1466,6 +577,7 @@
 
       display: flex;
       flex-wrap: wrap;
+
       gap: 10px;
     }
 
@@ -1488,12 +600,13 @@
     }
 
 
-    /* ==================================================
+    /* ========================================
        FOOTER
-    ================================================== */
+    ======================================== */
 
     footer {
       min-height: 150px;
+
       padding: 30px 32px;
 
       display: flex;
@@ -1503,6 +616,7 @@
 
     .footer-logo {
       font-family: "Roboto Condensed", sans-serif;
+
       font-size: 28px;
       font-weight: 700;
     }
@@ -1522,152 +636,9 @@
     }
 
 
-    /* ==================================================
-       GLOBAL ANIMATION
-    ================================================== */
-
-    @keyframes dataTravel {
-
-      0% {
-        left: 0;
-        opacity: 0;
-      }
-
-      12% {
-        opacity: 1;
-      }
-
-      88% {
-        opacity: 1;
-      }
-
-      100% {
-        left: calc(100% - 11px);
-        opacity: 0;
-      }
-
-    }
-
-    @keyframes statusBlink {
-
-      0%,
-      45% {
-        opacity: 1;
-      }
-
-      50%,
-      62% {
-        opacity: 0.2;
-      }
-
-      68%,
-      100% {
-        opacity: 1;
-      }
-
-    }
-
-    @keyframes processorPulse {
-
-      0%,
-      100% {
-        background: rgba(227, 66, 25, 0.015);
-      }
-
-      50% {
-        background: rgba(227, 66, 25, 0.08);
-      }
-
-    }
-
-
-    /* FACTORY CONVEYOR */
-
-    @keyframes conveyorMove {
-
-      from {
-        background-position: 0 0;
-      }
-
-      to {
-        background-position: 32px 0;
-      }
-
-    }
-
-
-    /* RANDOM INPUT → MACHINE */
-
-    @keyframes inputObjectMove {
-
-      0% {
-        left: -6%;
-        opacity: 0;
-      }
-
-      8% {
-        opacity: 1;
-      }
-
-      78% {
-        opacity: 1;
-      }
-
-      100% {
-        left: 47%;
-        opacity: 0;
-      }
-
-    }
-
-
-    /* MACHINE → STANDARD OUTPUT */
-
-    @keyframes outputObjectMove {
-
-      0% {
-        left: 53%;
-        opacity: 0;
-      }
-
-      12% {
-        opacity: 1;
-      }
-
-      88% {
-        opacity: 1;
-      }
-
-      100% {
-        left: 103%;
-        opacity: 0;
-      }
-
-    }
-
-
-    @keyframes machineScan {
-
-      0% {
-        top: 4%;
-        opacity: 0.15;
-      }
-
-      45% {
-        opacity: 0.85;
-      }
-
-      100% {
-        top: 95%;
-        opacity: 0.15;
-      }
-
-    }
-
-
-    /* ==================================================
-       RESPONSIVE / TABLET
-    ================================================== */
+    /* ========================================
+       RESPONSIVE
+    ======================================== */
 
     @media (max-width: 900px) {
 
@@ -1681,95 +652,9 @@
         grid-template-columns: 1fr;
       }
 
-      .approach-heading {
-        margin-bottom: 56px;
-      }
-
-      .approach-screen {
-        min-height: 650px;
-      }
-
-      .diagram-area {
-        min-height: 510px;
-        padding: 50px 24px;
-      }
-
-
-      /* MAKE */
-
-      .make-system {
+      .approach-grid {
         grid-template-columns: 1fr;
-        gap: 16px;
-        max-width: 500px;
       }
-
-      .data-line {
-        width: 1px;
-        height: 42px;
-        margin: 0 auto;
-      }
-
-      .data-line::after {
-        right: auto;
-        left: -4px;
-
-        top: auto;
-        bottom: -1px;
-
-        border-left: 5px solid transparent;
-        border-right: 5px solid transparent;
-        border-top: 8px solid #555555;
-        border-bottom: none;
-      }
-
-      .data-packet {
-        width: 11px;
-        height: 11px;
-
-        left: -5px;
-        top: 0;
-
-        animation: dataTravelVertical 2s linear infinite;
-      }
-
-
-      /* REFINE */
-
-      .refine-system {
-        grid-template-columns: 1fr;
-        max-width: 600px;
-      }
-
-      .refine-processor {
-        width: 180px;
-        margin: 0 auto;
-      }
-
-
-      /* SYSTEMIZE */
-
-      .factory-system {
-        width: 100%;
-        height: 330px;
-      }
-
-      .factory-machine {
-        width: 210px;
-        height: 210px;
-      }
-
-      .machine-center strong {
-        font-size: 58px;
-      }
-
-
-      .panel-info {
-        grid-template-columns: 1fr;
-        gap: 14px;
-      }
-
-
-      /* TOOLKIT */
 
       .toolkit-head {
         grid-template-columns: 1fr;
@@ -1794,33 +679,6 @@
     }
 
 
-    @keyframes dataTravelVertical {
-
-      0% {
-        top: 0;
-        opacity: 0;
-      }
-
-      12% {
-        opacity: 1;
-      }
-
-      88% {
-        opacity: 1;
-      }
-
-      100% {
-        top: calc(100% - 11px);
-        opacity: 0;
-      }
-
-    }
-
-
-    /* ==================================================
-       RESPONSIVE / MOBILE
-    ================================================== */
-
     @media (max-width: 560px) {
 
       .site-header {
@@ -1830,11 +688,13 @@
         padding: 18px 20px 16px;
 
         align-items: flex-start;
+
         gap: 14px;
       }
 
       .nav {
         gap: 5px;
+
         flex-wrap: wrap;
         justify-content: flex-end;
       }
@@ -1860,128 +720,6 @@
         font-size: 56px;
       }
 
-      .approach {
-        padding-top: 90px;
-        padding-bottom: 90px;
-      }
-
-
-      /* TABS */
-
-      .approach-tabs {
-        grid-template-columns: 1fr;
-      }
-
-      .approach-tab {
-        min-height: 68px;
-
-        padding: 13px 16px;
-
-        flex-direction: row;
-        align-items: center;
-
-        border-right: none;
-        border-bottom: 1px solid var(--line);
-      }
-
-      .approach-tab:last-child {
-        border-bottom: none;
-      }
-
-      .approach-tab-name {
-        font-size: 26px;
-      }
-
-      .approach-screen {
-        min-height: 700px;
-      }
-
-      .diagram-area {
-        padding: 38px 18px;
-      }
-
-
-      /* MAKE */
-
-      .large-node {
-        min-height: 110px;
-      }
-
-      .large-node strong {
-        font-size: 40px;
-      }
-
-
-      /* REFINE */
-
-      .comparison-screen {
-        min-height: 190px;
-      }
-
-
-      /* FACTORY */
-
-      .factory-system {
-        height: 340px;
-      }
-
-      .factory-machine {
-        width: 170px;
-        height: 190px;
-
-        padding: 13px;
-      }
-
-      .machine-center strong {
-        font-size: 48px;
-      }
-
-      .machine-center span {
-        font-size: 6px;
-      }
-
-      .machine-readout span {
-        font-size: 6px;
-      }
-
-      .factory-belt {
-        top: 144px;
-      }
-
-      .factory-shape {
-        top: 164px;
-      }
-
-      .shape-rect {
-        top: 169px;
-      }
-
-      .shape-triangle {
-        top: 164px;
-      }
-
-      .output-box {
-        top: 162px;
-      }
-
-      .factory-sequence {
-        font-size: 6px;
-      }
-
-
-      /* INFO */
-
-      .panel-info {
-        padding: 20px 18px;
-      }
-
-      .panel-info-title {
-        font-size: 28px;
-      }
-
-
-      /* TOOLKIT */
-
       .tool-item {
         grid-template-columns: 1fr 1fr;
       }
@@ -1996,11 +734,9 @@
 
       .tool-detail {
         padding: 30px 20px;
+
         min-height: 470px;
       }
-
-
-      /* EXPERIENCE */
 
       .experience-row {
         grid-template-columns: 58px 1fr;
@@ -2016,9 +752,6 @@
         font-size: 28px;
       }
 
-
-      /* FOOTER */
-
       footer {
         padding: 30px 20px;
 
@@ -2030,6 +763,7 @@
 
       .footer-meta {
         flex-direction: column;
+
         gap: 7px;
       }
 
@@ -2042,9 +776,9 @@
 <body>
 
 
-<!-- ==================================================
+<!-- ========================================
      HEADER
-================================================== -->
+======================================== -->
 
 <header class="site-header">
 
@@ -2064,9 +798,9 @@
 <main>
 
 
-  <!-- ==================================================
+  <!-- ========================================
        ABOUT INTRO
-  ================================================== -->
+  ======================================== -->
 
   <section class="about-intro">
 
@@ -2123,503 +857,100 @@
 
 
 
-  <!-- ==================================================
+  <!-- ========================================
        WORKING APPROACH
-  ================================================== -->
+  ======================================== -->
 
   <section class="approach">
 
-
-    <div class="approach-heading">
-
-      <div class="section-kicker">
-        WORKING APPROACH / 01
-      </div>
-
-      <h2 class="section-title">
-        MAKE.<br>
-        REFINE.<br>
-        SYSTEMIZE.
-      </h2>
-
+    <div class="section-kicker">
+      WORKING APPROACH / 01
     </div>
 
 
-
-    <div class="approach-console">
-
-
-      <!-- STATUS -->
-
-      <div class="console-status">
-
-        <span>
-          FILE403 / WORK PROCESS
-        </span>
-
-        <span class="console-status-right">
-          <i class="status-light"></i>
-          SYSTEM ONLINE
-        </span>
-
-      </div>
+    <h2 class="section-title">
+      MAKE.<br>
+      REFINE.<br>
+      SYSTEMIZE.
+    </h2>
 
 
+    <div class="approach-grid">
 
-      <!-- TABS -->
 
-      <div class="approach-tabs">
+      <!-- MAKE -->
 
-        <button
-          class="approach-tab active"
-          data-approach="make"
-          type="button"
-        >
+      <div class="approach-item">
 
-          <span class="approach-tab-number">
-            01 / PROCESS
-          </span>
+        <div class="approach-number">
+          01 / MAKE
+        </div>
 
-          <span class="approach-tab-name">
+
+        <div>
+
+          <h3>
             MAKE
-          </span>
+          </h3>
 
-        </button>
+          <p>
+            사진, 디자인, 콘텐츠처럼 실제로 보여줄 수 있는 결과물을 만듭니다.
+          </p>
+
+        </div>
+
+      </div>
 
 
-        <button
-          class="approach-tab"
-          data-approach="refine"
-          type="button"
-        >
 
-          <span class="approach-tab-number">
-            02 / PROCESS
-          </span>
+      <!-- REFINE -->
 
-          <span class="approach-tab-name">
+      <div class="approach-item">
+
+        <div class="approach-number">
+          02 / REFINE
+        </div>
+
+
+        <div>
+
+          <h3>
             REFINE
-          </span>
+          </h3>
 
-        </button>
+          <p>
+            기존 결과물과 운영 방식을 분석하고 더 나은 방향으로 개선합니다.
+          </p>
+
+        </div>
+
+      </div>
 
 
-        <button
-          class="approach-tab"
-          data-approach="systemize"
-          type="button"
-        >
 
-          <span class="approach-tab-number">
-            03 / PROCESS
-          </span>
+      <!-- SYSTEMIZE -->
 
-          <span class="approach-tab-name">
+      <div class="approach-item">
+
+        <div class="approach-number">
+          03 / SYSTEMIZE
+        </div>
+
+
+        <div>
+
+          <h3>
             SYSTEMIZE
-          </span>
+          </h3>
 
-        </button>
+          <p>
+            반복되는 작업과 데이터를 정리하고 효율적인 업무 구조로 바꿉니다.
+          </p>
+
+        </div>
 
       </div>
 
-
-
-      <!-- SCREEN -->
-
-      <div class="approach-screen">
-
-
-
-        <!-- ==================================================
-             MAKE
-        ================================================== -->
-
-        <div
-          class="approach-panel active"
-          data-panel="make"
-        >
-
-          <div class="diagram-area">
-
-
-            <div class="make-system">
-
-
-              <div class="large-node">
-
-                <span class="large-node-label">
-                  INPUT / 001
-                </span>
-
-                <strong>
-                  IDEA
-                </strong>
-
-              </div>
-
-
-
-              <div class="data-line">
-                <span class="data-packet"></span>
-              </div>
-
-
-
-              <div class="large-node large-node-center">
-
-                <span class="large-node-label">
-                  BUILD / ACTIVE
-                </span>
-
-                <strong>
-                  MAKE
-                </strong>
-
-              </div>
-
-
-
-              <div class="data-line">
-                <span class="data-packet delay"></span>
-              </div>
-
-
-
-              <div class="large-node">
-
-                <span class="large-node-label">
-                  OUTPUT / 001
-                </span>
-
-                <strong>
-                  FILE
-                </strong>
-
-              </div>
-
-
-            </div>
-
-          </div>
-
-
-
-          <div class="panel-info">
-
-            <div class="panel-info-title">
-              MAKE
-            </div>
-
-            <p class="panel-info-copy">
-              사진, 디자인, 콘텐츠처럼 아이디어를 실제로 보고 사용할 수 있는
-              결과물로 구현합니다.
-            </p>
-
-            <div class="panel-info-status">
-              INPUT → BUILD → OUTPUT
-            </div>
-
-          </div>
-
-        </div>
-
-
-
-        <!-- ==================================================
-             REFINE
-        ================================================== -->
-
-        <div
-          class="approach-panel"
-          data-panel="refine"
-        >
-
-          <div class="diagram-area">
-
-
-            <div class="refine-system">
-
-
-              <!-- BEFORE -->
-
-              <div class="comparison-screen">
-
-                <div class="comparison-head">
-
-                  <span>
-                    BEFORE / RAW
-                  </span>
-
-                  <span>
-                    INPUT
-                  </span>
-
-                </div>
-
-
-                <div class="comparison-bars before-bars">
-                  <i></i>
-                  <i></i>
-                  <i></i>
-                  <i></i>
-                </div>
-
-
-                <div class="comparison-foot">
-                  ORIGINAL STATE / 001
-                </div>
-
-              </div>
-
-
-
-              <!-- PROCESS -->
-
-              <div class="refine-processor">
-
-                <span>
-                  ANALYSIS
-                </span>
-
-                <strong>
-                  +
-                </strong>
-
-                <small>
-                  REFINE
-                </small>
-
-              </div>
-
-
-
-              <!-- AFTER -->
-
-              <div class="comparison-screen">
-
-                <div class="comparison-head">
-
-                  <span>
-                    AFTER / REFINED
-                  </span>
-
-                  <span>
-                    OUTPUT
-                  </span>
-
-                </div>
-
-
-                <div class="comparison-bars after-bars">
-                  <i></i>
-                  <i></i>
-                  <i></i>
-                  <i></i>
-                </div>
-
-
-                <div class="comparison-foot">
-                  IMPROVED STATE / 002
-                </div>
-
-              </div>
-
-
-            </div>
-
-          </div>
-
-
-
-          <div class="panel-info">
-
-            <div class="panel-info-title">
-              REFINE
-            </div>
-
-            <p class="panel-info-copy">
-              기존 결과물과 운영 방식을 관찰하고 문제를 분석해,
-              더 명확하고 효율적인 방향으로 수정하고 개선합니다.
-            </p>
-
-            <div class="panel-info-status">
-              ANALYZE → ADJUST → IMPROVE
-            </div>
-
-          </div>
-
-        </div>
-
-
-
-        <!-- ==================================================
-             SYSTEMIZE / AUTOMATION FACTORY
-        ================================================== -->
-
-        <div
-          class="approach-panel"
-          data-panel="systemize"
-        >
-
-          <div class="diagram-area">
-
-
-            <div class="factory-system">
-
-
-              <!-- LABEL -->
-
-              <span class="factory-label factory-label-input">
-                RAW INPUT / RANDOM
-              </span>
-
-              <span class="factory-label factory-label-output">
-                OUTPUT / STANDARDIZED
-              </span>
-
-
-
-              <!-- CONVEYOR -->
-
-              <div class="factory-belt"></div>
-
-
-
-              <!-- RANDOM INPUT -->
-
-              <div class="factory-inputs">
-
-                <span class="factory-shape shape-square"></span>
-
-                <span class="factory-shape shape-circle"></span>
-
-                <span class="factory-shape shape-rect"></span>
-
-                <span class="factory-shape shape-triangle"></span>
-
-              </div>
-
-
-
-              <!-- MACHINE -->
-
-              <div class="factory-machine">
-
-
-                <div class="machine-scan"></div>
-
-
-                <div class="machine-top">
-
-                  <span>
-                    SYSTEM / 403
-                  </span>
-
-                  <span class="machine-active">
-                    ● ACTIVE
-                  </span>
-
-                </div>
-
-
-                <div class="machine-center">
-
-                  <small>
-                    AUTOMATION
-                  </small>
-
-                  <strong>
-                    403
-                  </strong>
-
-                  <span>
-                    STRUCTURE / PROCESS / OUTPUT
-                  </span>
-
-                </div>
-
-
-                <div class="machine-readout">
-
-                  <span>QUEUE</span>
-                  <span>04</span>
-
-                  <span>PROCESS</span>
-                  <span>ACTIVE</span>
-
-                  <span>ERROR</span>
-                  <span>00</span>
-
-                  <span>OUTPUT</span>
-                  <span>READY</span>
-
-                </div>
-
-
-              </div>
-
-
-
-              <!-- STANDARD OUTPUT -->
-
-              <div class="factory-outputs">
-
-                <span class="output-box"></span>
-
-                <span class="output-box"></span>
-
-                <span class="output-box"></span>
-
-              </div>
-
-
-
-              <!-- BOTTOM -->
-
-              <div class="factory-sequence">
-
-                <span>
-                  INPUT / RANDOM
-                </span>
-
-                <span>
-                  SYSTEMIZE
-                </span>
-
-                <span>
-                  OUTPUT / STRUCTURED
-                </span>
-
-              </div>
-
-
-            </div>
-
-          </div>
-
-
-
-          <div class="panel-info">
-
-            <div class="panel-info-title">
-              SYSTEMIZE
-            </div>
-
-            <p class="panel-info-copy">
-              제각각 반복되는 작업과 데이터를 규칙에 맞게 구조화하고,
-              자동화하거나 재사용할 수 있는 일관된 업무 프로세스로 정리합니다.
-            </p>
-
-            <div class="panel-info-status">
-              INPUT → STRUCTURE → AUTOMATE → OUTPUT
-            </div>
-
-          </div>
-
-        </div>
-
-
-      </div>
 
     </div>
 
@@ -2627,9 +958,9 @@
 
 
 
-  <!-- ==================================================
+  <!-- ========================================
        TOOLKIT
-  ================================================== -->
+  ======================================== -->
 
   <section class="toolkit">
 
@@ -2664,7 +995,9 @@
     <div class="toolkit-layout">
 
 
-      <!-- TOOL LIST -->
+      <!-- ========================================
+           TOOL LIST
+      ======================================== -->
 
       <div class="tool-list">
 
@@ -2687,8 +1020,15 @@
           </span>
 
           <span class="tool-meter">
-            <i></i><i></i><i></i><i></i><i></i>
-            <i></i><i></i><i></i><i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
             <i class="empty"></i>
           </span>
 
@@ -2710,8 +1050,15 @@
           </span>
 
           <span class="tool-meter">
-            <i></i><i></i><i></i><i></i><i></i>
-            <i></i><i></i><i></i><i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
             <i class="empty"></i>
           </span>
 
@@ -2741,8 +1088,14 @@
           </span>
 
           <span class="tool-meter">
-            <i></i><i></i><i></i><i></i><i></i>
-            <i></i><i></i><i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
             <i class="empty"></i>
             <i class="empty"></i>
           </span>
@@ -2765,7 +1118,11 @@
           </span>
 
           <span class="tool-meter">
-            <i></i><i></i><i></i><i></i><i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
             <i></i>
             <i class="empty"></i>
             <i class="empty"></i>
@@ -2799,8 +1156,13 @@
           </span>
 
           <span class="tool-meter">
-            <i></i><i></i><i></i><i></i><i></i>
-            <i></i><i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
             <i class="empty"></i>
             <i class="empty"></i>
             <i class="empty"></i>
@@ -2824,7 +1186,10 @@
           </span>
 
           <span class="tool-meter">
-            <i></i><i></i><i></i><i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
             <i class="empty"></i>
             <i class="empty"></i>
             <i class="empty"></i>
@@ -2859,8 +1224,15 @@
           </span>
 
           <span class="tool-meter">
-            <i></i><i></i><i></i><i></i><i></i>
-            <i></i><i></i><i></i><i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
             <i class="empty"></i>
           </span>
 
@@ -2882,7 +1254,11 @@
           </span>
 
           <span class="tool-meter">
-            <i></i><i></i><i></i><i></i><i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
             <i class="empty"></i>
             <i class="empty"></i>
             <i class="empty"></i>
@@ -2901,7 +1277,9 @@
 
 
 
-      <!-- TOOL DETAIL -->
+      <!-- ========================================
+           TOOL DETAIL
+      ======================================== -->
 
       <aside class="tool-detail">
 
@@ -2921,12 +1299,14 @@
             PHOTOSHOP
           </h3>
 
+
           <div
             class="tool-detail-tags"
             id="toolTags"
           >
             RETOUCHING / COMPOSITING / DESIGN
           </div>
+
 
           <p id="toolDescription">
             사진의 톤 및 디테일 보정, 합성,
@@ -2958,9 +1338,9 @@
 
 
 
-  <!-- ==================================================
+  <!-- ========================================
        EXPERIENCE
-  ================================================== -->
+  ======================================== -->
 
   <section class="experience">
 
@@ -3035,9 +1415,9 @@
 
 
 
-  <!-- ==================================================
+  <!-- ========================================
        CONTACT
-  ================================================== -->
+  ======================================== -->
 
   <section class="contact">
 
@@ -3075,7 +1455,6 @@
 
     </div>
 
-
   </section>
 
 
@@ -3083,12 +1462,11 @@
 
 
 
-<!-- ==================================================
+<!-- ========================================
      FOOTER
-================================================== -->
+======================================== -->
 
 <footer>
-
 
   <div class="footer-logo">
     FILE<span>403</span>
@@ -3107,230 +1485,84 @@
 
   </div>
 
-
 </footer>
 
 
 
 <script>
 
-
-  /* ==================================================
-     WORKING APPROACH
-  ================================================== */
-
-  const approachTabs =
-    document.querySelectorAll(".approach-tab");
-
-  const approachPanels =
-    document.querySelectorAll(".approach-panel");
-
-
-  function activateApproach(name) {
-
-    approachTabs.forEach(tab => {
-
-      tab.classList.toggle(
-        "active",
-        tab.dataset.approach === name
-      );
-
-    });
-
-
-    approachPanels.forEach(panel => {
-
-      panel.classList.toggle(
-        "active",
-        panel.dataset.panel === name
-      );
-
-    });
-
-  }
-
-
-  approachTabs.forEach(tab => {
-
-    tab.addEventListener("mouseenter", () => {
-      activateApproach(tab.dataset.approach);
-    });
-
-    tab.addEventListener("focus", () => {
-      activateApproach(tab.dataset.approach);
-    });
-
-    tab.addEventListener("click", () => {
-      activateApproach(tab.dataset.approach);
-    });
-
-  });
-
-
-
-  /* ==================================================
-     TOOLKIT
-  ================================================== */
-
   const tools = {
 
-
     photoshop: {
-
       number: "TOOL / 01",
-
-      title:
-        "ADOBE<br>PHOTOSHOP",
-
-      tags:
-        "RETOUCHING / COMPOSITING / DESIGN",
-
+      title: "ADOBE<br>PHOTOSHOP",
+      tags: "RETOUCHING / COMPOSITING / DESIGN",
       description:
         "사진의 톤 및 디테일 보정, 합성, 상품 콘텐츠와 상세페이지 제작 과정에서 활용합니다.",
-
-      status:
-        "ADVANCED"
-
+      status: "ADVANCED"
     },
-
 
     lightroom: {
-
-      number:
-        "TOOL / 02",
-
-      title:
-        "ADOBE<br>LIGHTROOM",
-
-      tags:
-        "PHOTO / COLOR / WORKFLOW",
-
+      number: "TOOL / 02",
+      title: "ADOBE<br>LIGHTROOM",
+      tags: "PHOTO / COLOR / WORKFLOW",
       description:
         "RAW 현상, 색보정, 톤 정리와 다량의 사진을 효율적으로 관리하고 보정하는 데 활용합니다.",
-
-      status:
-        "ADVANCED"
-
+      status: "ADVANCED"
     },
-
 
     illustrator: {
-
-      number:
-        "TOOL / 03",
-
-      title:
-        "ADOBE<br>ILLUSTRATOR",
-
-      tags:
-        "GRAPHIC / VECTOR / EDITORIAL",
-
+      number: "TOOL / 03",
+      title: "ADOBE<br>ILLUSTRATOR",
+      tags: "GRAPHIC / VECTOR / EDITORIAL",
       description:
         "벡터 그래픽, 배너, 포스터, 편집 요소와 상품 콘텐츠 제작에 활용합니다.",
-
-      status:
-        "WORKING"
-
+      status: "WORKING"
     },
-
 
     figma: {
-
-      number:
-        "TOOL / 04",
-
-      title:
-        "FIGMA",
-
-      tags:
-        "UI / LAYOUT / PROTOTYPE",
-
+      number: "TOOL / 04",
+      title: "FIGMA",
+      tags: "UI / LAYOUT / PROTOTYPE",
       description:
         "웹 및 화면 구성, 레이아웃 설계와 간단한 프로토타이핑 작업에 활용합니다.",
-
-      status:
-        "WORKING"
-
+      status: "WORKING"
     },
-
 
     premiere: {
-
-      number:
-        "TOOL / 05",
-
-      title:
-        "PREMIERE<br>PRO",
-
-      tags:
-        "VIDEO / EDITING / CONTENT",
-
+      number: "TOOL / 05",
+      title: "PREMIERE<br>PRO",
+      tags: "VIDEO / EDITING / CONTENT",
       description:
         "영상 편집, 컷 구성, 자막 및 기본적인 콘텐츠 후반 작업에 활용합니다.",
-
-      status:
-        "WORKING"
-
+      status: "WORKING"
     },
-
 
     aftereffects: {
-
-      number:
-        "TOOL / 06",
-
-      title:
-        "AFTER<br>EFFECTS",
-
-      tags:
-        "MOTION / GRAPHIC / VIDEO",
-
+      number: "TOOL / 06",
+      title: "AFTER<br>EFFECTS",
+      tags: "MOTION / GRAPHIC / VIDEO",
       description:
         "기본적인 모션그래픽과 영상 효과, 타이포 애니메이션 제작에 활용합니다.",
-
-      status:
-        "BASIC"
-
+      status: "BASIC"
     },
-
 
     excel: {
-
-      number:
-        "TOOL / 07",
-
-      title:
-        "EXCEL<br>/ VBA",
-
-      tags:
-        "DATA / AUTOMATION / PROCESS",
-
+      number: "TOOL / 07",
+      title: "EXCEL<br>/ VBA",
+      tags: "DATA / AUTOMATION / PROCESS",
       description:
         "데이터 정리와 분석, 반복 업무 자동화 및 운영 프로세스 개선에 활용합니다.",
-
-      status:
-        "ADVANCED"
-
+      status: "ADVANCED"
     },
 
-
     html: {
-
-      number:
-        "TOOL / 08",
-
-      title:
-        "HTML<br>/ CSS",
-
-      tags:
-        "WEB / STRUCTURE / PUBLISHING",
-
+      number: "TOOL / 08",
+      title: "HTML<br>/ CSS",
+      tags: "WEB / STRUCTURE / PUBLISHING",
       description:
         "웹페이지 구조 수정, 레이아웃 구현과 간단한 퍼블리싱 작업에 활용합니다.",
-
-      status:
-        "WORKING"
-
+      status: "WORKING"
     }
 
   };
@@ -3362,9 +1594,7 @@
 
 
     toolItems.forEach(button => {
-
       button.classList.remove("active");
-
     });
 
 
@@ -3392,27 +1622,18 @@
   toolItems.forEach(item => {
 
     item.addEventListener("mouseenter", () => {
-
       activateTool(item);
-
     });
-
 
     item.addEventListener("focus", () => {
-
       activateTool(item);
-
     });
 
-
     item.addEventListener("click", () => {
-
       activateTool(item);
-
     });
 
   });
-
 
 </script>
 
