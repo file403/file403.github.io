@@ -265,14 +265,20 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
-  gap: 10px 22px;
+  gap: 10px 12px;
   font-family: "Roboto Mono", monospace;
   font-size: 11px;
-  color: var(--muted);
+}
+
+.discipline-nav a {
+  color: var(--accent);
+  padding: 7px 10px;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
 .discipline-nav a:hover {
-  color: var(--accent);
+  background: var(--accent);
+  color: #ffffff;
 }
 
 .work-list {
