@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>ABOUT — FILE403</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #000000;
+      --text: #f2f2f2;
+      --muted: #8a8a8a;
+      --line: #252525;
+      --accent: #e34219;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "SUIT", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    /* HEADER */
+
+    .site-header {
+      height: 72px;
+      padding: 0 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand {
+      font-family: "Roboto Condensed", sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+
+    .brand span {
+      color: var(--accent);
+    }
+
+    .nav {
+      display: flex;
+      gap: 18px;
+      font-family: "Roboto Mono", monospace;
+      font-size: 11px;
+    }
+
+    .nav a {
+      color: var(--accent);
+      padding: 7px 10px;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .nav a:hover,
+    .nav a.active {
+      background: var(--accent);
+      color: #ffffff;
+    }
+
+    /* ABOUT INTRO */
+
+    .about-intro {
+      min-height: 68vh;
+      display: grid;
+      grid-template-columns: 1fr 2.3fr;
+      padding: 52px 32px 68px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .about-index {
+      font-family: "Roboto Mono", monospace;
+      font-size: 11px;
+      color: var(--accent);
+    }
+
+    .about-main {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .about-title {
+      font-family: "Roboto Condensed", sans-serif;
+      font-size: clamp(90px, 13vw, 210px);
+      line-height: 0.78;
+      letter-spacing: -0.065em;
+      text-transform: uppercase;
+    }
+
+    .about-bottom {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 60px;
+      margin-top: 80px;
+    }
+
+    .about-description {
+      max-width: 650px;
+      color: #c6c6c6;
+      font-size: 16px;
+      line-height: 1.9;
+      word-break: keep-all;
+    }
+
+    .about-meta {
+      border-top: 1px solid var(--line);
+    }
+
+    .meta-row {
+      min-height: 44px;
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      align-items: center;
+      border-bottom: 1px solid var(--line);
+      font-family: "Roboto Mono", monospace;
+      font-size: 10px;
+    }
+
+    .meta-row span:first-child {
+      color: var(--muted);
+    }
+
+    /* WORKING APPROACH */
+
+    .approach {
+      padding: 120px 32px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-kicker {
+      margin-bottom: 16px;
+      font-family: "Roboto Mono", monospace;
+      font-size: 11px;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+    }
+
+    .section-title {
+      font-family: "Roboto Condensed", sans-serif;
+      font-size: clamp(56px, 8vw, 120px);
+      line-height: 0.82;
+      letter-spacing: -0.055em;
+      text-transform: uppercase;
+    }
+
+    .approach-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      margin-top: 72px;
+      border-top: 1px solid var(--line);
+      border-left: 1px solid var(--line);
+    }
+
+    .approach-item {
+      min-height: 280px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .approach-number {
+      font-family: "Roboto Mono", monospace;
+      font-size: 10px;
+      color: var(--accent);
+    }
+
+    .approach-item h3 {
+      font-family: "Roboto Condensed", sans-serif;
+      font-size: 44px;
+      line-height: 0.9;
+      letter-spacing: -0.04em;
+    }
+
+    .approach-item p {
+      margin-top: 18px;
+      max-width: 340px;
+      color: #bdbdbd;
+      font-size: 14px;
+      line-height: 1.8;
+      word-break: keep-all;
+    }
+
+    /* TOOLKIT */
+
+    .toolkit {
+      padding: 120px 32px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .toolkit-head {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 60px;
+      align-items: end;
+      margin-bottom: 80px;
+    }
+
+    .toolkit-head p {
+      max-width: 520px;
+      color: #bdbdbd;
+      line-height: 1.8;
+      font-size: 14px;
+      word-break: keep-all;
+    }
+
+    .toolkit-layout {
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .tool-list {
+      border-right: 1px solid var(--line);
+    }
+
+    .tool-category {
+      padding: 20px 18px 10px;
+      font-family: "Roboto Mono", monospace;
+      font-size: 10px;
+      color: var(--accent);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .tool-item {
+      width: 100%;
+      min-height: 76px;
+      border: 0;
+      border-bottom: 1px solid var(--line);
+      background: transparent;
+      color: var(--text);
+      display: grid;
+      grid-template-columns: 1.1fr 1fr 100px;
+      align-items: center;
+      gap: 24px;
+      padding: 0 18px;
+      cursor: pointer;
+      text-align: left;
+      transition:
+        background 0.18s ease,
+        color 0.18s ease;
+    }
+
+    .tool-item:hover,
+    .tool-item.active {
+      background: var(--accent);
+      color: #ffffff;
+    }
+
+    .tool-name {
+      font-family: "Roboto Condensed", sans-serif;
+      font-weight: 600;
+      font-size: 22px;
+      letter-spacing: -0.02em;
+    }
+
+    .tool-level {
+      font-family: "Roboto Mono", monospace;
+      font-size: 9px;
+      text-align: right;
+    }
+
+    .tool-meter {
+      display: grid;
+      grid-template-columns: repeat(10, 1fr);
+      gap: 4px;
+    }
+
+    .tool-meter i {
+      display: block;
+      height: 7px;
+      background: var(--accent);
+      border: 1px solid var(--accent);
+    }
+
+    .tool-meter i.empty {
+      background: transparent;
+      border-color: #484848;
+    }
+
+    .tool-item:hover .tool-meter i,
+    .tool-item.active .tool-meter i {
+      background: #ffffff;
+      border-color: #ffffff;
+    }
+
+    .tool-item:hover .tool-meter i.empty,
+    .tool-item.active .tool-meter i.empty {
+      background: transparent;
+      border-color: rgba(255,255,255,0.5);
+    }
+
+    .tool-detail {
+      min-height: 560px;
+      padding: 36px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .tool-detail-number {
+      font-family: "Roboto Mono", monospace;
+      color: var(--accent);
+      font-size: 11px;
+    }
+
+    .tool-detail h3 {
+      font-family: "Roboto Condensed", sans-serif;
+      font-size: clamp(48px, 5vw, 84px);
+      line-height: 0.84;
+      letter-spacing: -0.05em;
+    }
+
+    .tool-detail-tags {
+      margin-top: 28px;
+      color: var(--accent);
+      font-family: "Roboto Mono", monospace;
+      font-size: 10px;
+      line-height: 1.7;
+    }
+
+    .tool-detail p {
+      margin-top: 28px;
+      max-width: 440px;
+      color: #bdbdbd;
+      font-size: 14px;
+      line-height: 1.9;
+      word-break: keep-all;
+    }
+
+    .tool-status {
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      font-family: "Roboto Mono", monospace;
+      font-size: 10px;
+    }
+
+    .tool-status span {
+      color: var(--muted);
+    }
+
+    .tool-status strong {
+      color: var(--accent);
+      font-weight: 400;
+    }
+
+    /* EXPERIENCE */
+
+    .experience {
+      padding: 120px 32px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .experience-list {
+      margin-top: 70px;
+      border-top: 1px solid var(--line);
+    }
+
+    .experience-row {
+      min-height: 94px;
+      padding: 0 4px;
+      display: grid;
+      grid-template-columns: 120px 1fr 220px;
+      gap: 24px;
+      align-items: center;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .experience-year {
+      font-family: "Roboto Mono", monospace;
+      font-size: 10px;
+      color: var(--accent);
+    }
+
+    .experience-title {
+      font-family: "Roboto Condensed", sans-serif;
+      font-size: 34px;
+      line-height: 0.95;
+      letter-spacing: -0.03em;
+    }
+
+    .experience-type {
+      font-family: "Roboto Mono", monospace;
+      font-size: 10px;
+      color: var(--muted);
+      text-align: right;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      min-height: 500px;
+      padding: 110px 32px;
+      display: grid;
+      grid-template-columns: 1fr 2.3fr;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .contact-label {
+      font-family: "Roboto Mono", monospace;
+      font-size: 11px;
+      color: var(--accent);
+    }
+
+    .contact-main h2 {
+      font-family: "Roboto Condensed", sans-serif;
+      font-size: clamp(68px, 9vw, 150px);
+      line-height: 0.8;
+      letter-spacing: -0.06em;
+      text-transform: uppercase;
+    }
+
+    .contact-main h2 span {
+      color: var(--accent);
+    }
+
+    .contact-links {
+      margin-top: 50px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .contact-links a {
+      padding: 9px 12px;
+      color: var(--accent);
+      font-family: "Roboto Mono", monospace;
+      font-size: 11px;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .contact-links a:hover {
+      background: var(--accent);
+      color: #ffffff;
+    }
+
+    /* FOOTER */
+
+    footer {
+      min-height: 150px;
+      padding: 30px 32px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+
+    .footer-logo {
+      font-family: "Roboto Condensed", sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+    }
+
+    .footer-logo span {
+      color: var(--accent);
+    }
+
+    .footer-meta {
+      display: flex;
+      gap: 28px;
+      font-family: "Roboto Mono", monospace;
+      font-size: 10px;
+      color: var(--muted);
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 900px) {
+      .about-intro,
+      .contact {
+        grid-template-columns: 1fr;
+        gap: 50px;
+      }
+
+      .about-bottom {
+        grid-template-columns: 1fr;
+      }
+
+      .approach-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .toolkit-head {
+        grid-template-columns: 1fr;
+      }
+
+      .toolkit-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .tool-list {
+        border-right: none;
+      }
+
+      .tool-detail {
+        border-top: 1px solid var(--line);
+      }
+
+      .experience-row {
+        grid-template-columns: 90px 1fr 130px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .site-header {
+        height: auto;
+        min-height: 68px;
+        padding: 18px 20px 16px;
+        align-items: flex-start;
+        gap: 14px;
+      }
+
+      .nav {
+        gap: 5px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+
+      .nav a {
+        padding: 6px 7px;
+      }
+
+      .about-intro,
+      .approach,
+      .toolkit,
+      .experience,
+      .contact {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .about-title {
+        font-size: 76px;
+      }
+
+      .section-title {
+        font-size: 56px;
+      }
+
+      .tool-item {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .tool-level {
+        display: none;
+      }
+
+      .tool-name {
+        font-size: 18px;
+      }
+
+      .tool-detail {
+        padding: 30px 20px;
+        min-height: 470px;
+      }
+
+      .experience-row {
+        grid-template-columns: 58px 1fr;
+        padding: 20px 0;
+      }
+
+      .experience-type {
+        display: none;
+      }
+
+      .experience-title {
+        font-size: 28px;
+      }
+
+      footer {
+        padding: 30px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 36px;
+      }
+
+      .footer-meta {
+        flex-direction: column;
+        gap: 7px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="site-header">
+
+  <a class="brand" href="index.html">
+    FILE<span>403</span>
+  </a>
+
+  <nav class="nav">
+    <a href="index.html#work">WORK</a>
+    <a href="archive.html">ARCHIVE</a>
+    <a href="about.html" class="active">ABOUT</a>
+  </nav>
+
+</header>
+
+
+<main>
+
+  <!-- ABOUT INTRO -->
+
+  <section class="about-intro">
+
+    <div class="about-index">
+      ABOUT / 403
+    </div>
+
+    <div class="about-main">
+
+      <h1 class="about-title">
+        ABOUT
+      </h1>
+
+      <div class="about-bottom">
+
+        <p class="about-description">
+          사진과 디자인, 상품 운영, 데이터와 업무 시스템까지.
+          하나의 직무에 한정하기보다 실제 작업 과정에서 필요한 문제를 찾고,
+          만들고, 다듬고, 더 나은 방식으로 정리하는 일을 해왔습니다.
+        </p>
+
+        <div class="about-meta">
+
+          <div class="meta-row">
+            <span>BASED</span>
+            <span>SEOUL / KR</span>
+          </div>
+
+          <div class="meta-row">
+            <span>FOCUS</span>
+            <span>PHOTO / DESIGN / COMMERCE / SYSTEMS</span>
+          </div>
+
+          <div class="meta-row">
+            <span>METHOD</span>
+            <span>MAKE / REFINE / SYSTEMIZE</span>
+          </div>
+
+          <div class="meta-row">
+            <span>STATUS</span>
+            <span>AVAILABLE FOR WORK</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- WORKING APPROACH -->
+
+  <section class="approach">
+
+    <div class="section-kicker">
+      WORKING APPROACH / 01
+    </div>
+
+    <h2 class="section-title">
+      MAKE.<br>
+      REFINE.<br>
+      SYSTEMIZE.
+    </h2>
+
+    <div class="approach-grid">
+
+      <div class="approach-item">
+
+        <div class="approach-number">
+          01 / MAKE
+        </div>
+
+        <div>
+          <h3>MAKE</h3>
+
+          <p>
+            사진, 디자인, 콘텐츠처럼 실제로 보여줄 수 있는 결과물을 만듭니다.
+          </p>
+        </div>
+
+      </div>
+
+
+      <div class="approach-item">
+
+        <div class="approach-number">
+          02 / REFINE
+        </div>
+
+        <div>
+          <h3>REFINE</h3>
+
+          <p>
+            기존 결과물과 운영 방식을 분석하고 더 나은 방향으로 개선합니다.
+          </p>
+        </div>
+
+      </div>
+
+
+      <div class="approach-item">
+
+        <div class="approach-number">
+          03 / SYSTEMIZE
+        </div>
+
+        <div>
+          <h3>SYSTEMIZE</h3>
+
+          <p>
+            반복되는 작업과 데이터를 정리하고 효율적인 업무 구조로 바꿉니다.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- TOOLKIT -->
+
+  <section class="toolkit">
+
+    <div class="toolkit-head">
+
+      <div>
+
+        <div class="section-kicker">
+          TOOLKIT / LOADOUT
+        </div>
+
+        <h2 class="section-title">
+          TOOLS<br>
+          & SKILLS
+        </h2>
+
+      </div>
+
+      <p>
+        작업 과정에서 사용하는 주요 툴과 활용 영역입니다.
+        항목에 마우스를 올리거나 선택하면 세부 내용을 확인할 수 있습니다.
+      </p>
+
+    </div>
+
+
+    <div class="toolkit-layout">
+
+      <!-- TOOL LIST -->
+
+      <div class="tool-list">
+
+        <div class="tool-category">
+          PHOTO / 01
+        </div>
+
+        <button class="tool-item active" data-tool="photoshop" type="button">
+          <span class="tool-name">PHOTOSHOP</span>
+
+          <span class="tool-meter">
+            <i></i><i></i><i></i><i></i><i></i>
+            <i></i><i></i><i></i><i></i><i class="empty"></i>
+          </span>
+
+          <span class="tool-level">ADVANCED</span>
+        </button>
+
+
+        <button class="tool-item" data-tool="lightroom" type="button">
+          <span class="tool-name">LIGHTROOM</span>
+
+          <span class="tool-meter">
+            <i></i><i></i><i></i><i></i><i></i>
+            <i></i><i></i><i></i><i></i><i class="empty"></i>
+          </span>
+
+          <span class="tool-level">ADVANCED</span>
+        </button>
+
+
+        <div class="tool-category">
+          DESIGN / 02
+        </div>
+
+        <button class="tool-item" data-tool="illustrator" type="button">
+          <span class="tool-name">ILLUSTRATOR</span>
+
+          <span class="tool-meter">
+            <i></i><i></i><i></i><i></i><i></i>
+            <i></i><i></i><i></i><i class="empty"></i><i class="empty"></i>
+          </span>
+
+          <span class="tool-level">WORKING</span>
+        </button>
+
+
+        <button class="tool-item" data-tool="figma" type="button">
+          <span class="tool-name">FIGMA</span>
+
+          <span class="tool-meter">
+            <i></i><i></i><i></i><i></i><i></i>
+            <i></i><i class="empty"></i><i class="empty"></i>
+            <i class="empty"></i><i class="empty"></i>
+          </span>
+
+          <span class="tool-level">WORKING</span>
+        </button>
+
+
+        <div class="tool-category">
+          VIDEO / 03
+        </div>
+
+        <button class="tool-item" data-tool="premiere" type="button">
+          <span class="tool-name">PREMIERE PRO</span>
+
+          <span class="tool-meter">
+            <i></i><i></i><i></i><i></i><i></i>
+            <i></i><i></i><i class="empty"></i>
+            <i class="empty"></i><i class="empty"></i>
+          </span>
+
+          <span class="tool-level">WORKING</span>
+        </button>
+
+
+        <button class="tool-item" data-tool="aftereffects" type="button">
+          <span class="tool-name">AFTER EFFECTS</span>
+
+          <span class="tool-meter">
+            <i></i><i></i><i></i><i></i>
+            <i class="empty"></i><i class="empty"></i><i class="empty"></i>
+            <i class="empty"></i><i class="empty"></i><i class="empty"></i>
+          </span>
+
+          <span class="tool-level">BASIC</span>
+        </button>
+
+
+        <div class="tool-category">
+          SYSTEMS / 04
+        </div>
+
+        <button class="tool-item" data-tool="excel" type="button">
+          <span class="tool-name">EXCEL / VBA</span>
+
+          <span class="tool-meter">
+            <i></i><i></i><i></i><i></i><i></i>
+            <i></i><i></i><i></i><i></i><i class="empty"></i>
+          </span>
+
+          <span class="tool-level">ADVANCED</span>
+        </button>
+
+
+        <button class="tool-item" data-tool="html" type="button">
+          <span class="tool-name">HTML / CSS</span>
+
+          <span class="tool-meter">
+            <i></i><i></i><i></i><i></i><i></i>
+            <i class="empty"></i><i class="empty"></i><i class="empty"></i>
+            <i class="empty"></i><i class="empty"></i>
+          </span>
+
+          <span class="tool-level">WORKING</span>
+        </button>
+
+      </div>
+
+
+      <!-- TOOL DETAIL -->
+
+      <aside class="tool-detail">
+
+        <div class="tool-detail-number" id="toolNumber">
+          TOOL / 01
+        </div>
+
+        <div>
+
+          <h3 id="toolTitle">
+            ADOBE<br>
+            PHOTOSHOP
+          </h3>
+
+          <div class="tool-detail-tags" id="toolTags">
+            RETOUCHING / COMPOSITING / DESIGN
+          </div>
+
+          <p id="toolDescription">
+            사진의 톤 및 디테일 보정, 합성,
+            상품 콘텐츠와 상세페이지 제작 과정에서 활용합니다.
+          </p>
+
+        </div>
+
+        <div class="tool-status">
+          <span>STATUS</span>
+          <strong id="toolStatus">ADVANCED</strong>
+        </div>
+
+      </aside>
+
+    </div>
+
+  </section>
+
+
+  <!-- EXPERIENCE -->
+
+  <section class="experience">
+
+    <div class="section-kicker">
+      EXPERIENCE / 02
+    </div>
+
+    <h2 class="section-title">
+      EXPERIENCE
+    </h2>
+
+    <div class="experience-list">
+
+      <div class="experience-row">
+        <span class="experience-year">2026</span>
+        <span class="experience-title">COMMERCE & CONTENT OPERATION</span>
+        <span class="experience-type">OPERATION / DESIGN / SYSTEMS</span>
+      </div>
+
+      <div class="experience-row">
+        <span class="experience-year">2023—25</span>
+        <span class="experience-title">EVENT PHOTOGRAPHY</span>
+        <span class="experience-type">PHOTO / RETOUCHING</span>
+      </div>
+
+      <div class="experience-row">
+        <span class="experience-year">ARCHIVE</span>
+        <span class="experience-title">DESIGN & WORKFLOW PROJECTS</span>
+        <span class="experience-type">DESIGN / DATA / AUTOMATION</span>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT -->
+
+  <section class="contact">
+
+    <div class="contact-label">
+      CONTACT / 403
+    </div>
+
+    <div class="contact-main">
+
+      <h2>
+        LET'S<br>
+        <span>WORK.</span>
+      </h2>
+
+      <div class="contact-links">
+        <a href="#">EMAIL</a>
+        <a href="#">BEHANCE</a>
+        <a href="#">GITHUB</a>
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<footer>
+
+  <div class="footer-logo">
+    FILE<span>403</span>
+  </div>
+
+  <div class="footer-meta">
+    <span>SEOUL / KR</span>
+    <span>ABOUT / 2026</span>
+  </div>
+
+</footer>
+
+
+<script>
+  const tools = {
+    photoshop: {
+      number: "TOOL / 01",
+      title: "ADOBE<br>PHOTOSHOP",
+      tags: "RETOUCHING / COMPOSITING / DESIGN",
+      description:
+        "사진의 톤 및 디테일 보정, 합성, 상품 콘텐츠와 상세페이지 제작 과정에서 활용합니다.",
+      status: "ADVANCED"
+    },
+
+    lightroom: {
+      number: "TOOL / 02",
+      title: "ADOBE<br>LIGHTROOM",
+      tags: "PHOTO / COLOR / WORKFLOW",
+      description:
+        "RAW 현상, 색보정, 톤 정리와 다량의 사진을 효율적으로 관리하고 보정하는 데 활용합니다.",
+      status: "ADVANCED"
+    },
+
+    illustrator: {
+      number: "TOOL / 03",
+      title: "ADOBE<br>ILLUSTRATOR",
+      tags: "GRAPHIC / VECTOR / EDITORIAL",
+      description:
+        "벡터 그래픽, 배너, 포스터, 편집 요소와 상품 콘텐츠 제작에 활용합니다.",
+      status: "WORKING"
+    },
+
+    figma: {
+      number: "TOOL / 04",
+      title: "FIGMA",
+      tags: "UI / LAYOUT / PROTOTYPE",
+      description:
+        "웹 및 화면 구성, 레이아웃 설계와 간단한 프로토타이핑 작업에 활용합니다.",
+      status: "WORKING"
+    },
+
+    premiere: {
+      number: "TOOL / 05",
+      title: "PREMIERE<br>PRO",
+      tags: "VIDEO / EDITING / CONTENT",
+      description:
+        "영상 편집, 컷 구성, 자막 및 기본적인 콘텐츠 후반 작업에 활용합니다.",
+      status: "WORKING"
+    },
+
+    aftereffects: {
+      number: "TOOL / 06",
+      title: "AFTER<br>EFFECTS",
+      tags: "MOTION / GRAPHIC / VIDEO",
+      description:
+        "기본적인 모션그래픽과 영상 효과, 타이포 애니메이션 제작에 활용합니다.",
+      status: "BASIC"
+    },
+
+    excel: {
+      number: "TOOL / 07",
+      title: "EXCEL<br>/ VBA",
+      tags: "DATA / AUTOMATION / PROCESS",
+      description:
+        "데이터 정리와 분석, 반복 업무 자동화 및 운영 프로세스 개선에 활용합니다.",
+      status: "ADVANCED"
+    },
+
+    html: {
+      number: "TOOL / 08",
+      title: "HTML<br>/ CSS",
+      tags: "WEB / STRUCTURE / PUBLISHING",
+      description:
+        "웹페이지 구조 수정, 레이아웃 구현과 간단한 퍼블리싱 작업에 활용합니다.",
+      status: "WORKING"
+    }
+  };
+
+  const toolItems = document.querySelectorAll(".tool-item");
+
+  const toolNumber = document.getElementById("toolNumber");
+  const toolTitle = document.getElementById("toolTitle");
+  const toolTags = document.getElementById("toolTags");
+  const toolDescription = document.getElementById("toolDescription");
+  const toolStatus = document.getElementById("toolStatus");
+
+  function activateTool(item) {
+    const tool = tools[item.dataset.tool];
+
+    toolItems.forEach(button => {
+      button.classList.remove("active");
+    });
+
+    item.classList.add("active");
+
+    toolNumber.textContent = tool.number;
+    toolTitle.innerHTML = tool.title;
+    toolTags.textContent = tool.tags;
+    toolDescription.textContent = tool.description;
+    toolStatus.textContent = tool.status;
+  }
+
+  toolItems.forEach(item => {
+    item.addEventListener("mouseenter", () => {
+      activateTool(item);
+    });
+
+    item.addEventListener("focus", () => {
+      activateTool(item);
+    });
+
+    item.addEventListener("click", () => {
+      activateTool(item);
+    });
+  });
+</script>
+
+</body>
+</html>
