@@ -11,6 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
 
   <style>
+
     :root {
       --bg: #000000;
       --text: #f2f2f2;
@@ -47,9 +48,9 @@
     }
 
 
-    /* ========================================
+    /* ==================================================
        HEADER
-    ======================================== */
+    ================================================== */
 
     .site-header {
       height: 72px;
@@ -93,9 +94,9 @@
     }
 
 
-    /* ========================================
+    /* ==================================================
        ABOUT INTRO
-    ======================================== */
+    ================================================== */
 
     .about-intro {
       min-height: 68vh;
@@ -150,6 +151,7 @@
       grid-template-columns: 100px 1fr;
       align-items: center;
       border-bottom: 1px solid var(--line);
+
       font-family: "Roboto Mono", monospace;
       font-size: 10px;
     }
@@ -159,9 +161,9 @@
     }
 
 
-    /* ========================================
-       COMMON SECTION
-    ======================================== */
+    /* ==================================================
+       COMMON
+    ================================================== */
 
     .section-kicker {
       margin-bottom: 16px;
@@ -180,9 +182,9 @@
     }
 
 
-    /* ========================================
+    /* ==================================================
        WORKING APPROACH
-    ======================================== */
+    ================================================== */
 
     .approach {
       padding: 120px 32px;
@@ -193,14 +195,11 @@
       margin-bottom: 78px;
     }
 
-
-    /* MAIN CONSOLE */
-
     .approach-console {
-      border: 1px solid var(--line-light);
-      background: #020202;
       position: relative;
       overflow: hidden;
+      border: 1px solid var(--line-light);
+      background: #020202;
     }
 
     .approach-console::before {
@@ -225,7 +224,9 @@
     }
 
 
-    /* TOP STATUS BAR */
+    /* ==================================================
+       CONSOLE HEADER
+    ================================================== */
 
     .console-status {
       min-height: 46px;
@@ -260,7 +261,9 @@
     }
 
 
-    /* TABS */
+    /* ==================================================
+       APPROACH TABS
+    ================================================== */
 
     .approach-tabs {
       display: grid;
@@ -324,10 +327,12 @@
     }
 
 
-    /* SCREEN */
+    /* ==================================================
+       APPROACH SCREEN
+    ================================================== */
 
     .approach-screen {
-      min-height: 510px;
+      min-height: 540px;
       position: relative;
       z-index: 2;
       overflow: hidden;
@@ -342,7 +347,7 @@
 
       opacity: 0;
       visibility: hidden;
-      transform: translateY(8px);
+      transform: translateY(7px);
 
       transition:
         opacity 0.28s ease,
@@ -357,8 +362,8 @@
     }
 
     .diagram-area {
-      min-height: 395px;
-      padding: 55px 7%;
+      min-height: 420px;
+      padding: 52px 6%;
 
       display: flex;
       align-items: center;
@@ -366,7 +371,9 @@
     }
 
 
-    /* PANEL FOOTER */
+    /* ==================================================
+       PANEL INFO
+    ================================================== */
 
     .panel-info {
       min-height: 115px;
@@ -379,7 +386,7 @@
       gap: 32px;
       align-items: center;
 
-      background: rgba(0, 0, 0, 0.82);
+      background: rgba(0, 0, 0, 0.84);
     }
 
     .panel-info-title {
@@ -405,9 +412,9 @@
     }
 
 
-    /* ========================================
-       MAKE DIAGRAM
-    ======================================== */
+    /* ==================================================
+       MAKE
+    ================================================== */
 
     .make-system {
       width: min(1120px, 100%);
@@ -434,7 +441,6 @@
       justify-content: space-between;
 
       position: relative;
-
       background: rgba(0, 0, 0, 0.8);
     }
 
@@ -489,6 +495,7 @@
     .data-line::after {
       content: "";
       position: absolute;
+
       right: -1px;
       top: -5px;
 
@@ -503,8 +510,8 @@
     .data-packet {
       width: 11px;
       height: 11px;
-      position: absolute;
 
+      position: absolute;
       top: -5px;
       left: 0;
 
@@ -518,9 +525,9 @@
     }
 
 
-    /* ========================================
-       REFINE DIAGRAM
-    ======================================== */
+    /* ==================================================
+       REFINE
+    ================================================== */
 
     .refine-system {
       width: min(1160px, 100%);
@@ -542,6 +549,8 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+
+      overflow: hidden;
     }
 
     .comparison-head {
@@ -557,162 +566,133 @@
       display: flex;
       flex-direction: column;
       gap: 17px;
+
+      overflow: hidden;
     }
 
     .comparison-bars i {
       display: block;
       height: 5px;
-      background: #555555;
+
+      /* 핵심:
+         왼쪽 시작점은 항상 고정 */
+      margin-left: 0;
+      transform: none;
+
+      transform-origin: left center;
+      will-change: width;
     }
 
-    .before-bars i:nth-child(1) {
-      width: 83%;
+
+    /* BEFORE — 불규칙한 상태 */
+
+    .before-bars i {
+  background: #555555;
+  margin-left: 0;
+  transform: none;
+}
+
+.before-bars i:nth-child(1) {
+  width: 83%;
+}
+
+.before-bars i:nth-child(2) {
+  width: 56%;
+}
+
+.before-bars i:nth-child(3) {
+  width: 95%;
+}
+
+.before-bars i:nth-child(4) {
+  width: 47%;
+}
+
+
+    /* AFTER — 정리되어 있지만 계속 조정되는 상태 */
+
+    .after-bars i {
+      background: var(--accent);
     }
 
-    .before-bars i:nth-child(2) {
-      width: 56%;
-      margin-left: 14%;
+    .after-bars i:nth-child(1) {
+      animation: afterWave1 3s ease-in-out infinite alternate;
     }
 
-    .before-bars i:nth-child(3) {
-      width: 95%;
+    .after-bars i:nth-child(2) {
+      animation: afterWave2 2.7s ease-in-out infinite alternate;
     }
 
-    .before-bars i:nth-child(4) {
-      width: 47%;
-      margin-left: 27%;
+    .after-bars i:nth-child(3) {
+      animation: afterWave3 3.2s ease-in-out infinite alternate;
     }
 
-    .after-bars {
-  overflow: hidden;
-}
-
-.after-bars i {
-  background: var(--accent);
-  transform-origin: left center;
-  will-change: width, transform;
-}
-
-/* 각각 다른 움직임 */
-.after-bars i:nth-child(1) {
-  width: 92%;
-  animation: refineWave1 2.6s ease-in-out infinite alternate;
-}
-
-.after-bars i:nth-child(2) {
-  width: 76%;
-  animation: refineWave2 2.1s ease-in-out infinite alternate;
-}
-
-.after-bars i:nth-child(3) {
-  width: 88%;
-  animation: refineWave3 2.9s ease-in-out infinite alternate;
-}
-
-.after-bars i:nth-child(4) {
-  width: 62%;
-  animation: refineWave4 1.9s ease-in-out infinite alternate;
-}
+    .after-bars i:nth-child(4) {
+      animation: afterWave4 2.5s ease-in-out infinite alternate;
+    }
 
 
-/* LINE 01 */
+    /* BEFORE ANIMATION */
 
-@keyframes refineWave1 {
-  0% {
-    width: 72%;
-    transform: translateX(3%);
-  }
+    @keyframes beforeWave1 {
+      0%   { width: 53%; }
+      35%  { width: 86%; }
+      70%  { width: 61%; }
+      100% { width: 93%; }
+    }
 
-  35% {
-    width: 96%;
-    transform: translateX(0);
-  }
+    @keyframes beforeWave2 {
+      0%   { width: 81%; }
+      40%  { width: 43%; }
+      72%  { width: 72%; }
+      100% { width: 57%; }
+    }
 
-  70% {
-    width: 82%;
-    transform: translateX(8%);
-  }
+    @keyframes beforeWave3 {
+      0%   { width: 67%; }
+      32%  { width: 95%; }
+      65%  { width: 55%; }
+      100% { width: 84%; }
+    }
 
-  100% {
-    width: 100%;
-    transform: translateX(1%);
-  }
-}
-
-
-/* LINE 02 */
-
-@keyframes refineWave2 {
-  0% {
-    width: 84%;
-    transform: translateX(8%);
-  }
-
-  40% {
-    width: 62%;
-    transform: translateX(18%);
-  }
-
-  75% {
-    width: 91%;
-    transform: translateX(3%);
-  }
-
-  100% {
-    width: 74%;
-    transform: translateX(12%);
-  }
-}
+    @keyframes beforeWave4 {
+      0%   { width: 42%; }
+      38%  { width: 73%; }
+      68%  { width: 49%; }
+      100% { width: 65%; }
+    }
 
 
-/* LINE 03 */
+    /* AFTER ANIMATION */
 
-@keyframes refineWave3 {
-  0% {
-    width: 68%;
-    transform: translateX(13%);
-  }
+    @keyframes afterWave1 {
+      0%   { width: 84%; }
+      40%  { width: 96%; }
+      70%  { width: 89%; }
+      100% { width: 100%; }
+    }
 
-  30% {
-    width: 94%;
-    transform: translateX(2%);
-  }
+    @keyframes afterWave2 {
+      0%   { width: 71%; }
+      35%  { width: 84%; }
+      72%  { width: 77%; }
+      100% { width: 89%; }
+    }
 
-  65% {
-    width: 78%;
-    transform: translateX(9%);
-  }
+    @keyframes afterWave3 {
+      0%   { width: 82%; }
+      38%  { width: 94%; }
+      68%  { width: 87%; }
+      100% { width: 97%; }
+    }
 
-  100% {
-    width: 98%;
-    transform: translateX(0);
-  }
-}
+    @keyframes afterWave4 {
+      0%   { width: 59%; }
+      42%  { width: 72%; }
+      70%  { width: 65%; }
+      100% { width: 78%; }
+    }
 
-
-/* LINE 04 */
-
-@keyframes refineWave4 {
-  0% {
-    width: 54%;
-    transform: translateX(25%);
-  }
-
-  33% {
-    width: 80%;
-    transform: translateX(8%);
-  }
-
-  68% {
-    width: 61%;
-    transform: translateX(20%);
-  }
-
-  100% {
-    width: 88%;
-    transform: translateX(4%);
-  }
-}
 
     .comparison-foot {
       font-family: "Roboto Mono", monospace;
@@ -722,6 +702,7 @@
 
     .refine-processor {
       height: 180px;
+
       border: 1px solid var(--accent);
 
       display: flex;
@@ -730,6 +711,7 @@
       justify-content: center;
 
       color: var(--accent);
+
       background: rgba(227, 66, 25, 0.025);
 
       position: relative;
@@ -756,243 +738,452 @@
     }
 
 
-    /* ========================================
-       SYSTEMIZE DIAGRAM
-    ======================================== */
+    /* ==================================================
+       SYSTEMIZE — AUTOMATION FACTORY
+    ================================================== */
 
-    .systemize-system {
-      width: min(1160px, 100%);
+    .factory-system {
+      position: relative;
 
-      display: grid;
-      grid-template-columns:
-        minmax(210px, 0.85fr)
-        minmax(100px, 0.5fr)
-        220px
-        minmax(100px, 0.5fr)
-        minmax(180px, 0.8fr);
+      width: min(1180px, 100%);
+      height: 300px;
 
-      align-items: center;
+      overflow: hidden;
+
+      border-top: 1px solid #303030;
+      border-bottom: 1px solid #303030;
+
+      background:
+        linear-gradient(
+          rgba(255,255,255,0.012) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(255,255,255,0.012) 1px,
+          transparent 1px
+        );
+
+      background-size: 24px 24px;
     }
 
-    .task-list {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
 
-    .task-node {
-      min-height: 56px;
-      border: 1px solid #444444;
+    /* LABELS */
 
-      padding: 0 18px;
+    .factory-label {
+      position: absolute;
+      top: 18px;
 
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      z-index: 6;
 
       font-family: "Roboto Mono", monospace;
-      font-size: 10px;
-
-      background: rgba(0, 0, 0, 0.82);
+      font-size: 9px;
+      color: var(--muted);
     }
 
-    .task-node span:last-child {
-      color: #666666;
+    .factory-label-input {
+      left: 18px;
     }
 
-    .merge-lines {
-      height: 170px;
-      position: relative;
+    .factory-label-output {
+      right: 18px;
     }
 
-    .merge-lines::before {
-      content: "";
+
+    /* CONVEYOR */
+
+    .factory-belt {
       position: absolute;
 
       left: 0;
       right: 0;
-      top: 50%;
 
-      height: 1px;
-      background: #4a4a4a;
+      top: 136px;
+
+      height: 76px;
+
+      border-top: 1px solid #494949;
+      border-bottom: 1px solid #494949;
+
+      background:
+        repeating-linear-gradient(
+          90deg,
+          transparent 0,
+          transparent 28px,
+          #242424 29px,
+          #242424 31px
+        );
+
+      animation: conveyorMove 1.2s linear infinite;
     }
 
-    .merge-lines i {
+    .factory-belt::before,
+    .factory-belt::after {
+      content: "";
+
       position: absolute;
+
       left: 0;
-      width: 54%;
+      right: 0;
+
       height: 1px;
-      background: #4a4a4a;
+
+      background: #191919;
     }
 
-    .merge-lines i:nth-child(1) {
-      top: 16%;
-      transform: rotate(27deg);
-      transform-origin: left center;
+    .factory-belt::before {
+      top: 18px;
     }
 
-    .merge-lines i:nth-child(2) {
+    .factory-belt::after {
+      bottom: 18px;
+    }
+
+
+    /* INPUT OBJECTS */
+
+    .factory-inputs,
+    .factory-outputs {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    .factory-shape {
+      position: absolute;
+
+      top: 155px;
+      left: 1%;
+
+      z-index: 3;
+
+      display: block;
+
+      animation:
+        inputObjectMove 5.5s linear infinite;
+    }
+
+
+    /* SQUARE */
+
+    .shape-square {
+      width: 34px;
+      height: 34px;
+
+      border: 2px solid #888888;
+
+      animation-delay: 0s;
+    }
+
+
+    /* CIRCLE */
+
+    .shape-circle {
+      width: 36px;
+      height: 36px;
+
+      border: 2px solid #777777;
+      border-radius: 50%;
+
+      animation-delay: -1.4s;
+    }
+
+
+    /* RECTANGLE */
+
+    .shape-rect {
+      width: 52px;
+      height: 27px;
+
+      border: 2px solid #777777;
+
+      top: 160px;
+
+      animation-delay: -2.8s;
+    }
+
+
+    /* TRIANGLE */
+
+    .shape-triangle {
+      width: 0;
+      height: 0;
+
+      top: 155px;
+
+      border-left: 19px solid transparent;
+      border-right: 19px solid transparent;
+      border-bottom: 34px solid #777777;
+
+      animation-delay: -4.1s;
+    }
+
+    .shape-triangle::after {
+      content: "";
+
+      position: absolute;
+
+      left: -15px;
+      top: 5px;
+
+      width: 0;
+      height: 0;
+
+      border-left: 15px solid transparent;
+      border-right: 15px solid transparent;
+      border-bottom: 27px solid #020202;
+    }
+
+
+    /* CENTRAL MACHINE */
+
+    .factory-machine {
+      position: absolute;
+
+      left: 50%;
       top: 50%;
-    }
 
-    .merge-lines i:nth-child(3) {
-      bottom: 16%;
-      transform: rotate(-27deg);
-      transform-origin: left center;
-    }
+      z-index: 5;
 
-    .system-core-large {
-      width: 220px;
-      height: 220px;
+      width: 250px;
+      height: 230px;
+
+      transform: translate(-50%, -50%);
 
       border: 1px solid var(--accent);
 
+      background: #040404;
+
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      justify-content: space-between;
 
-      position: relative;
+      padding: 18px;
 
-      color: var(--accent);
-      background: rgba(227, 66, 25, 0.028);
+      overflow: hidden;
 
-      animation: systemCorePulse 2.4s ease-in-out infinite;
+      box-shadow:
+        0 0 0 1px rgba(227, 66, 25, 0.08);
     }
 
-    .system-core-large::before,
-    .system-core-large::after {
+    .factory-machine::before,
+    .factory-machine::after {
       content: "";
+
       position: absolute;
-      width: 22px;
-      height: 22px;
+
+      width: 23px;
+      height: 23px;
     }
 
-    .system-core-large::before {
+    .factory-machine::before {
       top: -1px;
       left: -1px;
+
       border-top: 4px solid var(--accent);
       border-left: 4px solid var(--accent);
     }
 
-    .system-core-large::after {
-      bottom: -1px;
+    .factory-machine::after {
       right: -1px;
-      border-bottom: 4px solid var(--accent);
+      bottom: -1px;
+
       border-right: 4px solid var(--accent);
+      border-bottom: 4px solid var(--accent);
     }
 
-    .system-core-large small {
-      font-family: "Roboto Mono", monospace;
-      font-size: 10px;
+
+    /* SCANNER */
+
+    .machine-scan {
+      position: absolute;
+
+      left: 0;
+      right: 0;
+      top: 0;
+
+      height: 2px;
+
+      background: var(--accent);
+
+      opacity: 0.7;
+
+      box-shadow:
+        0 0 12px rgba(227, 66, 25, 0.55);
+
+      animation: machineScan 2.1s ease-in-out infinite;
     }
 
-    .system-core-large strong {
-      margin-top: 8px;
-      font-family: "Roboto Condensed", sans-serif;
-      font-size: 74px;
-      line-height: 0.8;
-    }
 
-    .output-line {
-      height: 1px;
-      background: #4a4a4a;
+    .machine-top {
+      display: flex;
+      justify-content: space-between;
+
       position: relative;
+      z-index: 2;
+
+      font-family: "Roboto Mono", monospace;
+      font-size: 8px;
     }
 
-    .output-line .data-packet {
-      animation-duration: 1.8s;
+    .machine-top span:first-child {
+      color: var(--muted);
     }
 
-    .flow-node {
-      min-height: 125px;
+    .machine-active {
+      color: var(--accent);
+    }
 
-      border: 1px solid #454545;
+
+    .machine-center {
+      position: relative;
+      z-index: 2;
+
+      text-align: center;
+    }
+
+    .machine-center small {
+      display: block;
+
+      font-family: "Roboto Mono", monospace;
+      font-size: 9px;
+
+      color: var(--accent);
+
+      margin-bottom: 8px;
+    }
+
+    .machine-center strong {
+      display: block;
+
+      font-family: "Roboto Condensed", sans-serif;
+      font-size: 70px;
+      line-height: 0.78;
+
+      color: var(--accent);
+      letter-spacing: -0.06em;
+    }
+
+    .machine-center span {
+      display: block;
+
+      margin-top: 12px;
+
+      font-family: "Roboto Mono", monospace;
+      font-size: 8px;
+
+      color: #777777;
+    }
+
+
+    /* MACHINE STATUS */
+
+    .machine-readout {
+      position: relative;
+      z-index: 2;
+
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+
+      border-top: 1px solid #292929;
+    }
+
+    .machine-readout span {
+      padding: 8px 4px;
+
+      font-family: "Roboto Mono", monospace;
+      font-size: 7px;
+      color: #777777;
+
+      border-bottom: 1px solid #202020;
+    }
+
+    .machine-readout span:nth-child(even) {
+      text-align: right;
+      color: var(--accent);
+    }
+
+
+    /* OUTPUT OBJECTS */
+
+    .output-box {
+      position: absolute;
+
+      width: 39px;
+      height: 39px;
+
+      top: 153px;
+      left: 54%;
+
+      z-index: 3;
+
+      border: 2px solid var(--accent);
+
+      background: rgba(227, 66, 25, 0.08);
+
+      animation:
+        outputObjectMove 4.2s linear infinite;
+    }
+
+    .output-box:nth-child(1) {
+      animation-delay: 0s;
+    }
+
+    .output-box:nth-child(2) {
+      animation-delay: -1.4s;
+    }
+
+    .output-box:nth-child(3) {
+      animation-delay: -2.8s;
+    }
+
+
+    /* OUTPUT MARK */
+
+    .output-box::after {
+      content: "";
+
+      position: absolute;
+
+      left: 50%;
+      top: 50%;
+
+      width: 8px;
+      height: 8px;
+
+      transform: translate(-50%, -50%);
+
+      background: var(--accent);
+    }
+
+
+    /* FACTORY BOTTOM TEXT */
+
+    .factory-sequence {
+      position: absolute;
+
+      left: 18px;
+      right: 18px;
+      bottom: 18px;
+
+      z-index: 6;
 
       display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      justify-content: space-between;
 
-      background: rgba(0, 0, 0, 0.82);
-    }
-
-    .flow-node small {
       font-family: "Roboto Mono", monospace;
-      color: var(--muted);
-      font-size: 9px;
+      font-size: 8px;
+      color: #595959;
     }
 
-    .flow-node strong {
-      margin-top: 10px;
-      font-family: "Roboto Condensed", sans-serif;
-      font-size: 42px;
-      font-weight: 600;
+    .factory-sequence span:nth-child(2) {
+      color: var(--accent);
     }
 
 
-    /* ========================================
-       APPROACH ANIMATION
-    ======================================== */
-
-    @keyframes dataTravel {
-      0% {
-        left: 0;
-        opacity: 0;
-      }
-
-      12% {
-        opacity: 1;
-      }
-
-      88% {
-        opacity: 1;
-      }
-
-      100% {
-        left: calc(100% - 11px);
-        opacity: 0;
-      }
-    }
-
-    @keyframes statusBlink {
-      0%, 45% {
-        opacity: 1;
-      }
-
-      50%, 62% {
-        opacity: 0.2;
-      }
-
-      68%, 100% {
-        opacity: 1;
-      }
-    }
-
-    @keyframes processorPulse {
-      0%, 100% {
-        background: rgba(227, 66, 25, 0.015);
-      }
-
-      50% {
-        background: rgba(227, 66, 25, 0.08);
-      }
-    }
-
-    @keyframes systemCorePulse {
-      0%, 100% {
-        box-shadow: inset 0 0 0 rgba(227, 66, 25, 0);
-      }
-
-      50% {
-        box-shadow: inset 0 0 45px rgba(227, 66, 25, 0.075);
-      }
-    }
-
-
-    /* ========================================
+    /* ==================================================
        TOOLKIT
-    ======================================== */
+    ================================================== */
 
     .toolkit {
       padding: 120px 32px;
@@ -1018,6 +1209,7 @@
     .toolkit-layout {
       display: grid;
       grid-template-columns: 3fr 2fr;
+
       border-top: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
     }
@@ -1028,17 +1220,22 @@
 
     .tool-category {
       padding: 20px 18px 10px;
+
       font-family: "Roboto Mono", monospace;
       font-size: 10px;
+
       color: var(--accent);
+
       border-bottom: 1px solid var(--line);
     }
 
     .tool-item {
       width: 100%;
       min-height: 76px;
+
       border: 0;
       border-bottom: 1px solid var(--line);
+
       background: transparent;
       color: var(--text);
 
@@ -1085,6 +1282,7 @@
     .tool-meter i {
       display: block;
       height: 7px;
+
       background: var(--accent);
       border: 1px solid var(--accent);
     }
@@ -1103,7 +1301,7 @@
     .tool-item:hover .tool-meter i.empty,
     .tool-item.active .tool-meter i.empty {
       background: transparent;
-      border-color: rgba(255, 255, 255, 0.5);
+      border-color: rgba(255,255,255,0.5);
     }
 
 
@@ -1126,30 +1324,39 @@
 
     .tool-detail h3 {
       font-family: "Roboto Condensed", sans-serif;
+
       font-size: clamp(48px, 5vw, 84px);
+
       line-height: 0.84;
       letter-spacing: -0.05em;
     }
 
     .tool-detail-tags {
       margin-top: 28px;
+
       color: var(--accent);
+
       font-family: "Roboto Mono", monospace;
       font-size: 10px;
+
       line-height: 1.7;
     }
 
     .tool-detail p {
       margin-top: 28px;
       max-width: 440px;
+
       color: #bdbdbd;
+
       font-size: 14px;
       line-height: 1.9;
+
       word-break: keep-all;
     }
 
     .tool-status {
       padding-top: 18px;
+
       border-top: 1px solid var(--line);
 
       display: flex;
@@ -1169,9 +1376,9 @@
     }
 
 
-    /* ========================================
+    /* ==================================================
        EXPERIENCE
-    ======================================== */
+    ================================================== */
 
     .experience {
       padding: 120px 32px;
@@ -1189,6 +1396,7 @@
 
       display: grid;
       grid-template-columns: 120px 1fr 220px;
+
       gap: 24px;
       align-items: center;
 
@@ -1204,6 +1412,7 @@
     .experience-title {
       font-family: "Roboto Condensed", sans-serif;
       font-size: 34px;
+
       line-height: 0.95;
       letter-spacing: -0.03em;
     }
@@ -1211,14 +1420,15 @@
     .experience-type {
       font-family: "Roboto Mono", monospace;
       font-size: 10px;
+
       color: var(--muted);
       text-align: right;
     }
 
 
-    /* ========================================
+    /* ==================================================
        CONTACT
-    ======================================== */
+    ================================================== */
 
     .contact {
       min-height: 500px;
@@ -1238,9 +1448,12 @@
 
     .contact-main h2 {
       font-family: "Roboto Condensed", sans-serif;
+
       font-size: clamp(68px, 9vw, 150px);
+
       line-height: 0.8;
       letter-spacing: -0.06em;
+
       text-transform: uppercase;
     }
 
@@ -1250,6 +1463,7 @@
 
     .contact-links {
       margin-top: 50px;
+
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
@@ -1257,6 +1471,7 @@
 
     .contact-links a {
       padding: 9px 12px;
+
       color: var(--accent);
 
       font-family: "Roboto Mono", monospace;
@@ -1273,9 +1488,9 @@
     }
 
 
-    /* ========================================
+    /* ==================================================
        FOOTER
-    ======================================== */
+    ================================================== */
 
     footer {
       min-height: 150px;
@@ -1302,13 +1517,157 @@
 
       font-family: "Roboto Mono", monospace;
       font-size: 10px;
+
       color: var(--muted);
     }
 
 
-    /* ========================================
+    /* ==================================================
+       GLOBAL ANIMATION
+    ================================================== */
+
+    @keyframes dataTravel {
+
+      0% {
+        left: 0;
+        opacity: 0;
+      }
+
+      12% {
+        opacity: 1;
+      }
+
+      88% {
+        opacity: 1;
+      }
+
+      100% {
+        left: calc(100% - 11px);
+        opacity: 0;
+      }
+
+    }
+
+    @keyframes statusBlink {
+
+      0%,
+      45% {
+        opacity: 1;
+      }
+
+      50%,
+      62% {
+        opacity: 0.2;
+      }
+
+      68%,
+      100% {
+        opacity: 1;
+      }
+
+    }
+
+    @keyframes processorPulse {
+
+      0%,
+      100% {
+        background: rgba(227, 66, 25, 0.015);
+      }
+
+      50% {
+        background: rgba(227, 66, 25, 0.08);
+      }
+
+    }
+
+
+    /* FACTORY CONVEYOR */
+
+    @keyframes conveyorMove {
+
+      from {
+        background-position: 0 0;
+      }
+
+      to {
+        background-position: 32px 0;
+      }
+
+    }
+
+
+    /* RANDOM INPUT → MACHINE */
+
+    @keyframes inputObjectMove {
+
+      0% {
+        left: -6%;
+        opacity: 0;
+      }
+
+      8% {
+        opacity: 1;
+      }
+
+      78% {
+        opacity: 1;
+      }
+
+      100% {
+        left: 47%;
+        opacity: 0;
+      }
+
+    }
+
+
+    /* MACHINE → STANDARD OUTPUT */
+
+    @keyframes outputObjectMove {
+
+      0% {
+        left: 53%;
+        opacity: 0;
+      }
+
+      12% {
+        opacity: 1;
+      }
+
+      88% {
+        opacity: 1;
+      }
+
+      100% {
+        left: 103%;
+        opacity: 0;
+      }
+
+    }
+
+
+    @keyframes machineScan {
+
+      0% {
+        top: 4%;
+        opacity: 0.15;
+      }
+
+      45% {
+        opacity: 0.85;
+      }
+
+      100% {
+        top: 95%;
+        opacity: 0.15;
+      }
+
+    }
+
+
+    /* ==================================================
        RESPONSIVE / TABLET
-    ======================================== */
+    ================================================== */
 
     @media (max-width: 900px) {
 
@@ -1327,13 +1686,16 @@
       }
 
       .approach-screen {
-        min-height: 600px;
+        min-height: 650px;
       }
 
       .diagram-area {
-        min-height: 470px;
+        min-height: 510px;
         padding: 50px 24px;
       }
+
+
+      /* MAKE */
 
       .make-system {
         grid-template-columns: 1fr;
@@ -1350,6 +1712,7 @@
       .data-line::after {
         right: auto;
         left: -4px;
+
         top: auto;
         bottom: -1px;
 
@@ -1362,10 +1725,15 @@
       .data-packet {
         width: 11px;
         height: 11px;
+
         left: -5px;
         top: 0;
+
         animation: dataTravelVertical 2s linear infinite;
       }
+
+
+      /* REFINE */
 
       .refine-system {
         grid-template-columns: 1fr;
@@ -1377,48 +1745,31 @@
         margin: 0 auto;
       }
 
-      .systemize-system {
-        grid-template-columns: 1fr;
-        gap: 24px;
-        max-width: 520px;
+
+      /* SYSTEMIZE */
+
+      .factory-system {
+        width: 100%;
+        height: 330px;
       }
 
-      .merge-lines {
-        width: 1px;
-        height: 50px;
-        background: #4a4a4a;
-        margin: 0 auto;
+      .factory-machine {
+        width: 210px;
+        height: 210px;
       }
 
-      .merge-lines::before,
-      .merge-lines i {
-        display: none;
+      .machine-center strong {
+        font-size: 58px;
       }
 
-      .system-core-large {
-        margin: 0 auto;
-      }
-
-      .output-line {
-        width: 1px;
-        height: 48px;
-        margin: 0 auto;
-      }
-
-      .output-line .data-packet {
-        left: -5px;
-        top: 0;
-        animation: dataTravelVertical 1.8s linear infinite;
-      }
 
       .panel-info {
         grid-template-columns: 1fr;
         gap: 14px;
       }
 
-      .panel-info-status {
-        margin-top: 4px;
-      }
+
+      /* TOOLKIT */
 
       .toolkit-head {
         grid-template-columns: 1fr;
@@ -1439,10 +1790,12 @@
       .experience-row {
         grid-template-columns: 90px 1fr 130px;
       }
+
     }
 
 
     @keyframes dataTravelVertical {
+
       0% {
         top: 0;
         opacity: 0;
@@ -1460,18 +1813,20 @@
         top: calc(100% - 11px);
         opacity: 0;
       }
+
     }
 
 
-    /* ========================================
+    /* ==================================================
        RESPONSIVE / MOBILE
-    ======================================== */
+    ================================================== */
 
     @media (max-width: 560px) {
 
       .site-header {
         height: auto;
         min-height: 68px;
+
         padding: 18px 20px 16px;
 
         align-items: flex-start;
@@ -1510,12 +1865,16 @@
         padding-bottom: 90px;
       }
 
+
+      /* TABS */
+
       .approach-tabs {
         grid-template-columns: 1fr;
       }
 
       .approach-tab {
         min-height: 68px;
+
         padding: 13px 16px;
 
         flex-direction: row;
@@ -1534,12 +1893,15 @@
       }
 
       .approach-screen {
-        min-height: 650px;
+        min-height: 700px;
       }
 
       .diagram-area {
         padding: 38px 18px;
       }
+
+
+      /* MAKE */
 
       .large-node {
         min-height: 110px;
@@ -1549,18 +1911,65 @@
         font-size: 40px;
       }
 
+
+      /* REFINE */
+
       .comparison-screen {
         min-height: 190px;
       }
 
-      .system-core-large {
-        width: 170px;
-        height: 170px;
+
+      /* FACTORY */
+
+      .factory-system {
+        height: 340px;
       }
 
-      .system-core-large strong {
-        font-size: 58px;
+      .factory-machine {
+        width: 170px;
+        height: 190px;
+
+        padding: 13px;
       }
+
+      .machine-center strong {
+        font-size: 48px;
+      }
+
+      .machine-center span {
+        font-size: 6px;
+      }
+
+      .machine-readout span {
+        font-size: 6px;
+      }
+
+      .factory-belt {
+        top: 144px;
+      }
+
+      .factory-shape {
+        top: 164px;
+      }
+
+      .shape-rect {
+        top: 169px;
+      }
+
+      .shape-triangle {
+        top: 164px;
+      }
+
+      .output-box {
+        top: 162px;
+      }
+
+      .factory-sequence {
+        font-size: 6px;
+      }
+
+
+      /* INFO */
 
       .panel-info {
         padding: 20px 18px;
@@ -1569,6 +1978,9 @@
       .panel-info-title {
         font-size: 28px;
       }
+
+
+      /* TOOLKIT */
 
       .tool-item {
         grid-template-columns: 1fr 1fr;
@@ -1587,8 +1999,12 @@
         min-height: 470px;
       }
 
+
+      /* EXPERIENCE */
+
       .experience-row {
         grid-template-columns: 58px 1fr;
+
         padding: 20px 0;
       }
 
@@ -1599,6 +2015,9 @@
       .experience-title {
         font-size: 28px;
       }
+
+
+      /* FOOTER */
 
       footer {
         padding: 30px 20px;
@@ -1613,6 +2032,7 @@
         flex-direction: column;
         gap: 7px;
       }
+
     }
 
   </style>
@@ -1622,9 +2042,9 @@
 <body>
 
 
-<!-- ========================================
+<!-- ==================================================
      HEADER
-======================================== -->
+================================================== -->
 
 <header class="site-header">
 
@@ -1644,9 +2064,9 @@
 <main>
 
 
-  <!-- ========================================
+  <!-- ==================================================
        ABOUT INTRO
-  ======================================== -->
+  ================================================== -->
 
   <section class="about-intro">
 
@@ -1654,11 +2074,13 @@
       ABOUT / 403
     </div>
 
+
     <div class="about-main">
 
       <h1 class="about-title">
         ABOUT
       </h1>
+
 
       <div class="about-bottom">
 
@@ -1667,6 +2089,7 @@
           하나의 직무에 한정하기보다 실제 작업 과정에서 필요한 문제를 찾고,
           만들고, 다듬고, 더 나은 방식으로 정리하는 일을 해왔습니다.
         </p>
+
 
         <div class="about-meta">
 
@@ -1700,11 +2123,12 @@
 
 
 
-  <!-- ========================================
+  <!-- ==================================================
        WORKING APPROACH
-  ======================================== -->
+  ================================================== -->
 
   <section class="approach">
+
 
     <div class="approach-heading">
 
@@ -1721,9 +2145,11 @@
     </div>
 
 
+
     <div class="approach-console">
 
-      <!-- CONSOLE STATUS -->
+
+      <!-- STATUS -->
 
       <div class="console-status">
 
@@ -1739,7 +2165,8 @@
       </div>
 
 
-      <!-- TAB SELECTOR -->
+
+      <!-- TABS -->
 
       <div class="approach-tabs">
 
@@ -1748,6 +2175,7 @@
           data-approach="make"
           type="button"
         >
+
           <span class="approach-tab-number">
             01 / PROCESS
           </span>
@@ -1755,6 +2183,7 @@
           <span class="approach-tab-name">
             MAKE
           </span>
+
         </button>
 
 
@@ -1763,6 +2192,7 @@
           data-approach="refine"
           type="button"
         >
+
           <span class="approach-tab-number">
             02 / PROCESS
           </span>
@@ -1770,6 +2200,7 @@
           <span class="approach-tab-name">
             REFINE
           </span>
+
         </button>
 
 
@@ -1778,6 +2209,7 @@
           data-approach="systemize"
           type="button"
         >
+
           <span class="approach-tab-number">
             03 / PROCESS
           </span>
@@ -1785,9 +2217,11 @@
           <span class="approach-tab-name">
             SYSTEMIZE
           </span>
+
         </button>
 
       </div>
+
 
 
       <!-- SCREEN -->
@@ -1795,7 +2229,10 @@
       <div class="approach-screen">
 
 
-        <!-- MAKE PANEL -->
+
+        <!-- ==================================================
+             MAKE
+        ================================================== -->
 
         <div
           class="approach-panel active"
@@ -1804,7 +2241,9 @@
 
           <div class="diagram-area">
 
+
             <div class="make-system">
+
 
               <div class="large-node">
 
@@ -1819,9 +2258,11 @@
               </div>
 
 
+
               <div class="data-line">
                 <span class="data-packet"></span>
               </div>
+
 
 
               <div class="large-node large-node-center">
@@ -1837,9 +2278,11 @@
               </div>
 
 
+
               <div class="data-line">
                 <span class="data-packet delay"></span>
               </div>
+
 
 
               <div class="large-node">
@@ -1854,9 +2297,11 @@
 
               </div>
 
+
             </div>
 
           </div>
+
 
 
           <div class="panel-info">
@@ -1880,7 +2325,9 @@
 
 
 
-        <!-- REFINE PANEL -->
+        <!-- ==================================================
+             REFINE
+        ================================================== -->
 
         <div
           class="approach-panel"
@@ -1889,15 +2336,26 @@
 
           <div class="diagram-area">
 
+
             <div class="refine-system">
 
+
+              <!-- BEFORE -->
 
               <div class="comparison-screen">
 
                 <div class="comparison-head">
-                  <span>BEFORE / RAW</span>
-                  <span>INPUT</span>
+
+                  <span>
+                    BEFORE / RAW
+                  </span>
+
+                  <span>
+                    INPUT
+                  </span>
+
                 </div>
+
 
                 <div class="comparison-bars before-bars">
                   <i></i>
@@ -1906,12 +2364,16 @@
                   <i></i>
                 </div>
 
+
                 <div class="comparison-foot">
                   ORIGINAL STATE / 001
                 </div>
 
               </div>
 
+
+
+              <!-- PROCESS -->
 
               <div class="refine-processor">
 
@@ -1930,12 +2392,23 @@
               </div>
 
 
+
+              <!-- AFTER -->
+
               <div class="comparison-screen">
 
                 <div class="comparison-head">
-                  <span>AFTER / REFINED</span>
-                  <span>OUTPUT</span>
+
+                  <span>
+                    AFTER / REFINED
+                  </span>
+
+                  <span>
+                    OUTPUT
+                  </span>
+
                 </div>
+
 
                 <div class="comparison-bars after-bars">
                   <i></i>
@@ -1943,6 +2416,7 @@
                   <i></i>
                   <i></i>
                 </div>
+
 
                 <div class="comparison-foot">
                   IMPROVED STATE / 002
@@ -1954,6 +2428,7 @@
             </div>
 
           </div>
+
 
 
           <div class="panel-info">
@@ -1977,7 +2452,9 @@
 
 
 
-        <!-- SYSTEMIZE PANEL -->
+        <!-- ==================================================
+             SYSTEMIZE / AUTOMATION FACTORY
+        ================================================== -->
 
         <div
           class="approach-panel"
@@ -1986,63 +2463,132 @@
 
           <div class="diagram-area">
 
-            <div class="systemize-system">
+
+            <div class="factory-system">
 
 
-              <div class="task-list">
+              <!-- LABEL -->
 
-                <div class="task-node">
-                  <span>TASK / A</span>
-                  <span>REPEAT</span>
+              <span class="factory-label factory-label-input">
+                RAW INPUT / RANDOM
+              </span>
+
+              <span class="factory-label factory-label-output">
+                OUTPUT / STANDARDIZED
+              </span>
+
+
+
+              <!-- CONVEYOR -->
+
+              <div class="factory-belt"></div>
+
+
+
+              <!-- RANDOM INPUT -->
+
+              <div class="factory-inputs">
+
+                <span class="factory-shape shape-square"></span>
+
+                <span class="factory-shape shape-circle"></span>
+
+                <span class="factory-shape shape-rect"></span>
+
+                <span class="factory-shape shape-triangle"></span>
+
+              </div>
+
+
+
+              <!-- MACHINE -->
+
+              <div class="factory-machine">
+
+
+                <div class="machine-scan"></div>
+
+
+                <div class="machine-top">
+
+                  <span>
+                    SYSTEM / 403
+                  </span>
+
+                  <span class="machine-active">
+                    ● ACTIVE
+                  </span>
+
                 </div>
 
-                <div class="task-node">
-                  <span>TASK / B</span>
-                  <span>REPEAT</span>
+
+                <div class="machine-center">
+
+                  <small>
+                    AUTOMATION
+                  </small>
+
+                  <strong>
+                    403
+                  </strong>
+
+                  <span>
+                    STRUCTURE / PROCESS / OUTPUT
+                  </span>
+
                 </div>
 
-                <div class="task-node">
-                  <span>TASK / C</span>
-                  <span>REPEAT</span>
+
+                <div class="machine-readout">
+
+                  <span>QUEUE</span>
+                  <span>04</span>
+
+                  <span>PROCESS</span>
+                  <span>ACTIVE</span>
+
+                  <span>ERROR</span>
+                  <span>00</span>
+
+                  <span>OUTPUT</span>
+                  <span>READY</span>
+
                 </div>
 
-              </div>
-
-
-              <div class="merge-lines">
-                <i></i>
-                <i></i>
-                <i></i>
-              </div>
-
-
-              <div class="system-core-large">
-
-                <small>
-                  SYSTEM
-                </small>
-
-                <strong>
-                  403
-                </strong>
 
               </div>
 
 
-              <div class="output-line">
-                <span class="data-packet"></span>
+
+              <!-- STANDARD OUTPUT -->
+
+              <div class="factory-outputs">
+
+                <span class="output-box"></span>
+
+                <span class="output-box"></span>
+
+                <span class="output-box"></span>
+
               </div>
 
 
-              <div class="flow-node">
 
-                <small>
-                  OUTPUT / FLOW
-                </small>
+              <!-- BOTTOM -->
 
-                <strong>
-                  FLOW
-                </strong>
+              <div class="factory-sequence">
+
+                <span>
+                  INPUT / RANDOM
+                </span>
+
+                <span>
+                  SYSTEMIZE
+                </span>
+
+                <span>
+                  OUTPUT / STRUCTURED
+                </span>
 
               </div>
 
@@ -2052,6 +2598,7 @@
           </div>
 
 
+
           <div class="panel-info">
 
             <div class="panel-info-title">
@@ -2059,12 +2606,12 @@
             </div>
 
             <p class="panel-info-copy">
-              반복되는 작업과 데이터를 구조화하고,
-              자동화하거나 재사용할 수 있는 업무 시스템으로 정리합니다.
+              제각각 반복되는 작업과 데이터를 규칙에 맞게 구조화하고,
+              자동화하거나 재사용할 수 있는 일관된 업무 프로세스로 정리합니다.
             </p>
 
             <div class="panel-info-status">
-              REPEAT → STRUCTURE → AUTOMATE
+              INPUT → STRUCTURE → AUTOMATE → OUTPUT
             </div>
 
           </div>
@@ -2080,13 +2627,15 @@
 
 
 
-  <!-- ========================================
+  <!-- ==================================================
        TOOLKIT
-  ======================================== -->
+  ================================================== -->
 
   <section class="toolkit">
 
+
     <div class="toolkit-head">
+
 
       <div>
 
@@ -2101,12 +2650,15 @@
 
       </div>
 
+
       <p>
         작업 과정에서 사용하는 주요 툴과 활용 영역입니다.
         항목에 마우스를 올리거나 선택하면 세부 내용을 확인할 수 있습니다.
       </p>
 
+
     </div>
+
 
 
     <div class="toolkit-layout">
@@ -2136,7 +2688,8 @@
 
           <span class="tool-meter">
             <i></i><i></i><i></i><i></i><i></i>
-            <i></i><i></i><i></i><i></i><i class="empty"></i>
+            <i></i><i></i><i></i><i></i>
+            <i class="empty"></i>
           </span>
 
           <span class="tool-level">
@@ -2158,7 +2711,8 @@
 
           <span class="tool-meter">
             <i></i><i></i><i></i><i></i><i></i>
-            <i></i><i></i><i></i><i></i><i class="empty"></i>
+            <i></i><i></i><i></i><i></i>
+            <i class="empty"></i>
           </span>
 
           <span class="tool-level">
@@ -2189,7 +2743,8 @@
           <span class="tool-meter">
             <i></i><i></i><i></i><i></i><i></i>
             <i></i><i></i><i></i>
-            <i class="empty"></i><i class="empty"></i>
+            <i class="empty"></i>
+            <i class="empty"></i>
           </span>
 
           <span class="tool-level">
@@ -2212,8 +2767,10 @@
           <span class="tool-meter">
             <i></i><i></i><i></i><i></i><i></i>
             <i></i>
-            <i class="empty"></i><i class="empty"></i>
-            <i class="empty"></i><i class="empty"></i>
+            <i class="empty"></i>
+            <i class="empty"></i>
+            <i class="empty"></i>
+            <i class="empty"></i>
           </span>
 
           <span class="tool-level">
@@ -2244,7 +2801,9 @@
           <span class="tool-meter">
             <i></i><i></i><i></i><i></i><i></i>
             <i></i><i></i>
-            <i class="empty"></i><i class="empty"></i><i class="empty"></i>
+            <i class="empty"></i>
+            <i class="empty"></i>
+            <i class="empty"></i>
           </span>
 
           <span class="tool-level">
@@ -2266,8 +2825,12 @@
 
           <span class="tool-meter">
             <i></i><i></i><i></i><i></i>
-            <i class="empty"></i><i class="empty"></i><i class="empty"></i>
-            <i class="empty"></i><i class="empty"></i><i class="empty"></i>
+            <i class="empty"></i>
+            <i class="empty"></i>
+            <i class="empty"></i>
+            <i class="empty"></i>
+            <i class="empty"></i>
+            <i class="empty"></i>
           </span>
 
           <span class="tool-level">
@@ -2320,8 +2883,11 @@
 
           <span class="tool-meter">
             <i></i><i></i><i></i><i></i><i></i>
-            <i class="empty"></i><i class="empty"></i><i class="empty"></i>
-            <i class="empty"></i><i class="empty"></i>
+            <i class="empty"></i>
+            <i class="empty"></i>
+            <i class="empty"></i>
+            <i class="empty"></i>
+            <i class="empty"></i>
           </span>
 
           <span class="tool-level">
@@ -2330,6 +2896,7 @@
 
         </button>
 
+
       </div>
 
 
@@ -2337,6 +2904,7 @@
       <!-- TOOL DETAIL -->
 
       <aside class="tool-detail">
+
 
         <div
           class="tool-detail-number"
@@ -2380,6 +2948,7 @@
 
         </div>
 
+
       </aside>
 
 
@@ -2389,15 +2958,17 @@
 
 
 
-  <!-- ========================================
+  <!-- ==================================================
        EXPERIENCE
-  ======================================== -->
+  ================================================== -->
 
   <section class="experience">
+
 
     <div class="section-kicker">
       EXPERIENCE / 02
     </div>
+
 
     <h2 class="section-title">
       EXPERIENCE
@@ -2405,6 +2976,7 @@
 
 
     <div class="experience-list">
+
 
       <div class="experience-row">
 
@@ -2456,17 +3028,19 @@
 
       </div>
 
+
     </div>
 
   </section>
 
 
 
-  <!-- ========================================
+  <!-- ==================================================
        CONTACT
-  ======================================== -->
+  ================================================== -->
 
   <section class="contact">
+
 
     <div class="contact-label">
       CONTACT / 403
@@ -2474,6 +3048,7 @@
 
 
     <div class="contact-main">
+
 
       <h2>
         LET'S<br>
@@ -2497,7 +3072,9 @@
 
       </div>
 
+
     </div>
+
 
   </section>
 
@@ -2506,20 +3083,30 @@
 
 
 
-<!-- ========================================
+<!-- ==================================================
      FOOTER
-======================================== -->
+================================================== -->
 
 <footer>
+
 
   <div class="footer-logo">
     FILE<span>403</span>
   </div>
 
+
   <div class="footer-meta">
-    <span>SEOUL / KR</span>
-    <span>ABOUT / 2026</span>
+
+    <span>
+      SEOUL / KR
+    </span>
+
+    <span>
+      ABOUT / 2026
+    </span>
+
   </div>
+
 
 </footer>
 
@@ -2527,9 +3114,10 @@
 
 <script>
 
-  /* ========================================
+
+  /* ==================================================
      WORKING APPROACH
-  ======================================== */
+  ================================================== */
 
   const approachTabs =
     document.querySelectorAll(".approach-tab");
@@ -2580,89 +3168,169 @@
 
 
 
-  /* ========================================
-     TOOLKIT / LOADOUT
-  ======================================== */
+  /* ==================================================
+     TOOLKIT
+  ================================================== */
 
   const tools = {
 
+
     photoshop: {
+
       number: "TOOL / 01",
-      title: "ADOBE<br>PHOTOSHOP",
-      tags: "RETOUCHING / COMPOSITING / DESIGN",
+
+      title:
+        "ADOBE<br>PHOTOSHOP",
+
+      tags:
+        "RETOUCHING / COMPOSITING / DESIGN",
+
       description:
         "사진의 톤 및 디테일 보정, 합성, 상품 콘텐츠와 상세페이지 제작 과정에서 활용합니다.",
-      status: "ADVANCED"
+
+      status:
+        "ADVANCED"
+
     },
 
 
     lightroom: {
-      number: "TOOL / 02",
-      title: "ADOBE<br>LIGHTROOM",
-      tags: "PHOTO / COLOR / WORKFLOW",
+
+      number:
+        "TOOL / 02",
+
+      title:
+        "ADOBE<br>LIGHTROOM",
+
+      tags:
+        "PHOTO / COLOR / WORKFLOW",
+
       description:
         "RAW 현상, 색보정, 톤 정리와 다량의 사진을 효율적으로 관리하고 보정하는 데 활용합니다.",
-      status: "ADVANCED"
+
+      status:
+        "ADVANCED"
+
     },
 
 
     illustrator: {
-      number: "TOOL / 03",
-      title: "ADOBE<br>ILLUSTRATOR",
-      tags: "GRAPHIC / VECTOR / EDITORIAL",
+
+      number:
+        "TOOL / 03",
+
+      title:
+        "ADOBE<br>ILLUSTRATOR",
+
+      tags:
+        "GRAPHIC / VECTOR / EDITORIAL",
+
       description:
         "벡터 그래픽, 배너, 포스터, 편집 요소와 상품 콘텐츠 제작에 활용합니다.",
-      status: "WORKING"
+
+      status:
+        "WORKING"
+
     },
 
 
     figma: {
-      number: "TOOL / 04",
-      title: "FIGMA",
-      tags: "UI / LAYOUT / PROTOTYPE",
+
+      number:
+        "TOOL / 04",
+
+      title:
+        "FIGMA",
+
+      tags:
+        "UI / LAYOUT / PROTOTYPE",
+
       description:
         "웹 및 화면 구성, 레이아웃 설계와 간단한 프로토타이핑 작업에 활용합니다.",
-      status: "WORKING"
+
+      status:
+        "WORKING"
+
     },
 
 
     premiere: {
-      number: "TOOL / 05",
-      title: "PREMIERE<br>PRO",
-      tags: "VIDEO / EDITING / CONTENT",
+
+      number:
+        "TOOL / 05",
+
+      title:
+        "PREMIERE<br>PRO",
+
+      tags:
+        "VIDEO / EDITING / CONTENT",
+
       description:
         "영상 편집, 컷 구성, 자막 및 기본적인 콘텐츠 후반 작업에 활용합니다.",
-      status: "WORKING"
+
+      status:
+        "WORKING"
+
     },
 
 
     aftereffects: {
-      number: "TOOL / 06",
-      title: "AFTER<br>EFFECTS",
-      tags: "MOTION / GRAPHIC / VIDEO",
+
+      number:
+        "TOOL / 06",
+
+      title:
+        "AFTER<br>EFFECTS",
+
+      tags:
+        "MOTION / GRAPHIC / VIDEO",
+
       description:
         "기본적인 모션그래픽과 영상 효과, 타이포 애니메이션 제작에 활용합니다.",
-      status: "BASIC"
+
+      status:
+        "BASIC"
+
     },
 
 
     excel: {
-      number: "TOOL / 07",
-      title: "EXCEL<br>/ VBA",
-      tags: "DATA / AUTOMATION / PROCESS",
+
+      number:
+        "TOOL / 07",
+
+      title:
+        "EXCEL<br>/ VBA",
+
+      tags:
+        "DATA / AUTOMATION / PROCESS",
+
       description:
         "데이터 정리와 분석, 반복 업무 자동화 및 운영 프로세스 개선에 활용합니다.",
-      status: "ADVANCED"
+
+      status:
+        "ADVANCED"
+
     },
 
 
     html: {
-      number: "TOOL / 08",
-      title: "HTML<br>/ CSS",
-      tags: "WEB / STRUCTURE / PUBLISHING",
+
+      number:
+        "TOOL / 08",
+
+      title:
+        "HTML<br>/ CSS",
+
+      tags:
+        "WEB / STRUCTURE / PUBLISHING",
+
       description:
         "웹페이지 구조 수정, 레이아웃 구현과 간단한 퍼블리싱 작업에 활용합니다.",
-      status: "WORKING"
+
+      status:
+        "WORKING"
+
     }
 
   };
@@ -2694,7 +3362,9 @@
 
 
     toolItems.forEach(button => {
+
       button.classList.remove("active");
+
     });
 
 
@@ -2722,18 +3392,27 @@
   toolItems.forEach(item => {
 
     item.addEventListener("mouseenter", () => {
+
       activateTool(item);
+
     });
+
 
     item.addEventListener("focus", () => {
+
       activateTool(item);
+
     });
 
+
     item.addEventListener("click", () => {
+
       activateTool(item);
+
     });
 
   });
+
 
 </script>
 
