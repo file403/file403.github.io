@@ -181,7 +181,25 @@
     }
 
     /* PROCESS */
+.before-link {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+}
 
+.before-preview {
+  display: block;
+  width: 100%;
+  height: 570px;
+  object-fit: cover;
+  object-position: top;
+  border: 1px solid #292929;
+  transition: opacity 0.2s ease;
+}
+
+.before-link:hover .before-preview {
+  opacity: 0.75;
+}
     .process {
       border-bottom: 1px solid var(--line);
     }
@@ -636,11 +654,22 @@
 
     <div class="process-row">
 
-      <div class="process-image">
-        <div class="placeholder">
-          <span>BEFORE / ORIGINAL</span>
-        </div>
-      </div>
+<div class="process-image">
+
+  <a
+    class="before-link"
+    href="./before-full.html"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <img
+      class="before-preview"
+      src="./before_full_AT-01V.png"
+      alt="AT-01V 기존 상세페이지 전체보기"
+    >
+  </a>
+
+</div>
 
       <div class="process-copy">
 
