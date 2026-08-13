@@ -269,10 +269,7 @@
       opacity: 0.75;
     }
 
-    .analysis-board {
-      padding: 24px;
-      border-bottom: 1px solid var(--line);
-    }
+    /* ANALYSIS PREVIEW */
 
     .analysis-link {
       display: block;
@@ -292,30 +289,6 @@
 
     .analysis-link:hover .analysis-preview {
       opacity: 0.75;
-    }
-
-    .analysis-actions {
-      margin-top: 24px;
-    }
-
-    .analysis-button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 46px;
-      padding: 12px 16px;
-      border: 1px solid var(--accent);
-      font-family: "Roboto Mono", monospace;
-      font-size: 15px;
-      font-weight: 500;
-      letter-spacing: 0.02em;
-      color: var(--accent);
-      transition: background 0.2s ease, color 0.2s ease;
-    }
-
-    .analysis-button:hover {
-      background: var(--accent);
-      color: #ffffff;
     }
 
     
@@ -804,30 +777,61 @@
 
     </div>
 
-    <div class="analysis-board">
+    <div class="process-row reverse">
 
-      <a
-        class="analysis-link"
-        href="../analysis/analysis_full_AT-01V.jpg"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <img
-          class="analysis-preview"
-          src="../analysis/analysis_full_AT-01V.jpg"
-          alt="AT-01V 상세페이지 분석 전체보기"
-        >
-      </a>
+      <div class="process-image">
 
-      <div class="analysis-actions">
         <a
-          class="analysis-button"
+          class="analysis-link"
           href="../analysis/analysis_full_AT-01V.jpg"
           target="_blank"
           rel="noopener noreferrer"
         >
-          VIEW FULL ANALYSIS ↗
+          <img
+            class="analysis-preview"
+            src="../analysis/analysis_full_AT-01V.jpg"
+            alt="AT-01V 상세페이지 분석 전체보기"
+          >
         </a>
+
+      </div>
+
+      <div class="process-copy">
+
+        <div class="process-number">
+          ANALYSIS / 01
+        </div>
+
+        <div class="process-text">
+
+          <h3>
+            KEY<br>
+            FINDINGS
+          </h3>
+
+          <p>
+            기존 상세페이지를 콘텐츠의 최신성, 정보 위계, 비주얼 일관성,
+            기능 표현 방식과 실제 구매자가 필요로 하는 정보의 관점에서 분석했습니다.
+
+            오래된 홍보 콘텐츠와 낮은 후킹력, 실사·3D·합성 이미지의 혼용,
+            기능 중심의 설명과 약한 구매 설득 구조를 주요 개선 과제로 정리했습니다.
+          </p>
+
+          <div class="detail-actions">
+
+            <a
+              class="detail-link"
+              href="../analysis/analysis_full_AT-01V.jpg"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              VIEW FULL ANALYSIS ↗
+            </a>
+
+          </div>
+
+        </div>
+
       </div>
 
     </div>
