@@ -270,20 +270,53 @@
     }
 
     .analysis-board {
-  padding: 32px;
-  border-bottom: 1px solid var(--line);
-}
+      padding: 24px;
+      border-bottom: 1px solid var(--line);
+    }
 
-.analysis-board a,
-.analysis-board img {
-  display: block;
-  width: 100%;
-}
+    .analysis-link {
+      display: block;
+      width: 100%;
+      overflow: hidden;
+    }
 
-.analysis-board img {
-  height: auto;
-  border: 1px solid #292929;
-}
+    .analysis-preview {
+      display: block;
+      width: 100%;
+      height: 570px;
+      object-fit: cover;
+      object-position: top;
+      border: 1px solid #292929;
+      transition: opacity 0.2s ease;
+    }
+
+    .analysis-link:hover .analysis-preview {
+      opacity: 0.75;
+    }
+
+    .analysis-actions {
+      margin-top: 24px;
+    }
+
+    .analysis-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 12px 16px;
+      border: 1px solid var(--accent);
+      font-family: "Roboto Mono", monospace;
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      color: var(--accent);
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .analysis-button:hover {
+      background: var(--accent);
+      color: #ffffff;
+    }
 
     
     /* PLACEHOLDER */
@@ -596,7 +629,8 @@
         min-height: 50vh;
       }
 
-      .before-preview {
+      .before-preview,
+      .analysis-preview {
         height: 50vh;
       }
 
@@ -770,18 +804,33 @@
 
     </div>
 
-<div class="analysis-board">
-  <a
-    href="../analysis/analysis_full_AT-01V.jpg"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <img
-      src="../analysis/analysis_full_AT-01V.jpg"
-      alt="AT-01V 기존 상세페이지 분석"
-    >
-  </a>
-</div>
+    <div class="analysis-board">
+
+      <a
+        class="analysis-link"
+        href="../analysis/analysis_full_AT-01V.jpg"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          class="analysis-preview"
+          src="../analysis/analysis_full_AT-01V.jpg"
+          alt="AT-01V 상세페이지 분석 전체보기"
+        >
+      </a>
+
+      <div class="analysis-actions">
+        <a
+          class="analysis-button"
+          href="../analysis/analysis_full_AT-01V.jpg"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          VIEW FULL ANALYSIS ↗
+        </a>
+      </div>
+
+    </div>
 
     
     <!-- PROCESS 02 : DEVELOPMENT -->
